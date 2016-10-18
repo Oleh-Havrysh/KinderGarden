@@ -1,5 +1,6 @@
 package hakito.kindergarden.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 /**
@@ -43,6 +44,11 @@ public class Child {
 
     public void setBirthDate(Calendar birthDate) {
         this.birthDate = birthDate;
+    }
+
+    public String getBirthDateString()
+    {
+        return new SimpleDateFormat("dd.MM.yyyy").format(birthDate.getTime());
     }
 
     public String getNotices() {

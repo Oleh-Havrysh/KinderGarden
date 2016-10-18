@@ -11,19 +11,24 @@ import hakito.kindergarden.model.Child;
  */
 
 public class ControllerImpl implements Controller {
-    @Override
-    public List<Child> getChildrens() {
-        List<Child> children = new LinkedList<>();
+    static List<Child> children = new LinkedList<>();
 
+    static {
 
         children.add(new Child("Nastya", "Fedorenko", new GregorianCalendar(1997, 1, 11), "Pretty"));
         children.add(new Child("Oleh", "Havrysh", new GregorianCalendar(1997, 9, 16), "f-"));
         children.add(new Child("Irina", "Petrenko", new GregorianCalendar(1997, 4, 27), "kot"));
+    }
+
+    @Override
+    public List<Child> getChildrens() {
+
+
         return children;
     }
 
     @Override
     public Child getChild(long id) {
-        return getChildrens().get((int)id);
+        return getChildrens().get((int) id);
     }
 }
