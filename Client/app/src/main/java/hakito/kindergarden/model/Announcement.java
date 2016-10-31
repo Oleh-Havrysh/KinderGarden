@@ -1,5 +1,6 @@
 package hakito.kindergarden.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 /**
@@ -41,5 +42,10 @@ public class Announcement {
 
     public void setDate(Calendar date) {
         this.date = date;
+    }
+
+    public String getPrettyDate()
+    {
+        return new SimpleDateFormat("dd.MM.yyyy").format(date.getTime());
     }
 }

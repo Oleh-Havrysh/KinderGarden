@@ -56,7 +56,7 @@ public class ControllerImpl implements Controller {
     }
 
 
-    public Object getAnnouncements() {
+    public List<Announcement> getAnnouncements() {
         return announcements;
     }
 }
