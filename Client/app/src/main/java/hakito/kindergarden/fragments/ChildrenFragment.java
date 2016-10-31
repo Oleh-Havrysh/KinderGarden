@@ -37,13 +37,13 @@ public class ChildrenFragment extends Fragment implements AdapterView.OnItemClic
     public void onPause() {
         super.onPause();
 
-        getView().setVisibility(View.INVISIBLE);
+       // getView().setVisibility(View.INVISIBLE);
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        getView().setVisibility(View.VISIBLE);
+        //getView().setVisibility(View.VISIBLE);
     }
 
     @Override

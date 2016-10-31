@@ -8,18 +8,19 @@ import java.util.Calendar;
  */
 
 public class Child {
-    private String name, surname;
+    private String name;
     private Calendar birthDate;
     private String notices;
+    private int parentId;
 
     public Child() {
     }
 
-    public Child(String name, String surname, Calendar birthDate, String notices) {
+    public Child(String name, Calendar birthDate, String notices, int parentId) {
         this.name = name;
-        this.surname = surname;
         this.birthDate = birthDate;
         this.notices = notices;
+        this.parentId = parentId;
     }
 
     public String getName() {
@@ -30,13 +31,7 @@ public class Child {
         this.name = name;
     }
 
-    public String getSurname() {
-        return surname;
-    }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
 
     public Calendar getBirthDate() {
         return birthDate;
@@ -59,7 +54,11 @@ public class Child {
         this.notices = notices;
     }
 
-    public String getFullName() {
-        return String.format("%s %s", name, surname);
+    public int getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(int parentId) {
+        this.parentId = parentId;
     }
 }

@@ -2,6 +2,9 @@ package hakito.kindergarden.adapters;
 
 import android.content.Context;
 import android.database.DataSetObserver;
+import android.databinding.DataBindingUtil;
+import android.databinding.ViewDataBinding;
+import android.support.annotation.LayoutRes;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,20 +13,20 @@ import android.widget.ListAdapter;
 import java.util.List;
 
 /**
- * Created by Oleg on 16.10.2016.
+ * Created by Oleg on 19.10.2016.
  */
 
-public abstract class BaseAdapter<T> implements ListAdapter {
+public class BaseBindableAdapter<T> implements ListAdapter {
     protected LayoutInflater layoutInflater;
+    private final List<T> items;
+    private final int layoutId;
+    private final int bindVariableId;
 
-    protected List<T> items;
-
-    protected int resId;
-
-    public BaseAdapter(Context context, List<T> items, int resId) {
+    public BaseBindableAdapter(Context context, List<T> items, @LayoutRes int layoutId, int bindVariableId) {
+        layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.items = items;
-        this.resId = resId;
-        layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        this.layoutId = layoutId;
+        this.bindVariableId = bindVariableId;
     }
 
     @Override
@@ -68,15 +71,19 @@ public abstract class BaseAdapter<T> implements ListAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view;
-        view=convertView;
-        if(view==null)
-        {
-            view =layoutInflater.inflate(resId, parent, false);
-        }
-        fillView(view, getItem(position));
+        View v = convertView;
+        ViewDataBinding binding;
+        if (v == null) {
+            binding = DataBindingUtil.inflate(layoutInflater, layoutId, parent, false);
+            v = binding.getRoot();
 
-        return view;
+        } else {
+            binding = DataBindingUtil.getBinding(v);
+        }
+
+        binding.setVariable(bindVariableId, getItem(position));
+
+        return v;
     }
 
     @Override
@@ -93,8 +100,4 @@ public abstract class BaseAdapter<T> implements ListAdapter {
     public boolean isEmpty() {
         return items.isEmpty();
     }
-
-    protected abstract void fillView(View view, T obj);
-
-
 }

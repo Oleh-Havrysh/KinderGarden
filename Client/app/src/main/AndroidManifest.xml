@@ -18,7 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="hakito.kindergarden.ChildActivity"></activity>
+        <activity android:name="hakito.kindergarden.ChildActivity" />
+        <activity android:name="hakito.kindergarden.ParentActivity"></activity>
     </application>
 
 </manifest>
