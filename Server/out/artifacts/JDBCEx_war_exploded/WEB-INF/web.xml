@@ -5,7 +5,7 @@
          version="3.1">
     <servlet>
         <servlet-name>MyServlet</servlet-name>
-        <servlet-class>ua.nure.havrysh.kindergarten.MyServlet</servlet-class>
+        <servlet-class>MyServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
