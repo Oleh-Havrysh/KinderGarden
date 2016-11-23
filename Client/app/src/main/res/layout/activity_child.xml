@@ -4,7 +4,7 @@
 
         <variable
             name="child"
-            type="hakito.kindergarden.model.Child" />
+            type="ua.nure.havrysh.kindergarten.model.Child" />
     </data>
 
     <LinearLayout
@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context="hakito.kindergarden.ChildActivity">
+        tools:context="ua.nure.havrysh.kindergarten.activitieshildActivity">
 
         <TableLayout
             android:layout_width="match_parent"
@@ -34,7 +34,6 @@
                     android:id="@+id/text_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:enabled="@{child.name!=`Nastya`}"
                     android:text="@={child.name}"
 
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
@@ -55,7 +54,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
-                    android:text="@{child.birthDateString}"
+                    android:text="@{child.birth_date.toString()}"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
             </TableRow>
 
@@ -74,7 +73,7 @@
                     android:id="@+id/text_notice"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@{child.notices}"
+                    android:text="@{child.notice}"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
             </TableRow>
 

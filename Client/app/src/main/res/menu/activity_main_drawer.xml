@@ -6,8 +6,8 @@
         android:id="@+id/menu_announcements"
         android:checkable="false"
         android:checked="false" />
-    <item android:title="Children"
-        android:id="@+id/menu_children"
+    <item android:title="Groups"
+        android:id="@+id/menu_groups"
         android:checkable="false"
         android:checked="false" />
     <item android:title="Settings"

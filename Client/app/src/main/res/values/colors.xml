@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="fragmentBackground">#ffffff</color>
-    <color name="colorPrimary">#ffee58</color>
-    <color name="colorPrimaryDark">#fdd835</color>
-    <color name="colorAccent">#536dfe</color>
+    <color name="colorPrimary">#ff8082</color>
+    <color name="colorPrimaryDark">#ff5252</color>
+    <color name="colorAccent">#8c9eff</color>
 </resources>

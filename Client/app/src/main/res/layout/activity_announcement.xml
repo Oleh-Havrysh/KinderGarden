@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
         <variable
             name="ann"
-            type="hakito.kindergarden.model.Announcement"></variable>
+            type="ua.nure.havrysh.kindergarten.model.Announcement"></variable>
     </data>
 
-    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <TableLayout
+
         android:id="@+id/activity_announcement"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,17 +20,25 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
-        tools:context="hakito.kindergarden.AnnouncementActivity">
+        tools:context="ua.nure.havrysh.kindergarten.activitiesnnouncementActivity">
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/text_title"
+                android:text="Title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{ann.title}" />
+                android:id="@+id/textView10" />
+
+            <EditText
+                android:id="@+id/text_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={ann.title}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                tools:text="Title" />
         </TableRow>
 
         <TableRow>
@@ -37,16 +47,33 @@
                 android:id="@+id/text_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{ann.prettyDate}" />
+                android:text="@{ann.expires.toString()}"
+                tools:text="Date" />
         </TableRow>
 
         <TableRow>
 
             <TextView
-                android:id="@+id/textView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{ann.description}" />
+                android:id="@+id/textView11"
+                android:text="Content" />
+
+            <EditText
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={ann.content}"
+                tools:text="Announcement description" />
+
+
         </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+        </TableRow>
+
     </TableLayout>
 </layout>
