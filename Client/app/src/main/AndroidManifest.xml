@@ -30,7 +30,8 @@
         <activity
             android:name="ua.nure.havrysh.kindergarten.activities.LoginActivity"
             android:label="@string/title_activity_login" />
-        <activity android:name="ua.nure.havrysh.kindergarten.activities.GroupActivity"></activity>
+        <activity android:name="ua.nure.havrysh.kindergarten.activities.GroupActivity" />
+        <activity android:name="ua.nure.havrysh.kindergarten.activities.MarkActivity"></activity>
     </application>
 
 </manifest>

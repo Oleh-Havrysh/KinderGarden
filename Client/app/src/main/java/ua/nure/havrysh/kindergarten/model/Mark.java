@@ -1,8 +1,11 @@
 package ua.nure.havrysh.kindergarten.model;
 
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 public class Mark {
+    private static final SimpleDateFormat sdf = new SimpleDateFormat();
+
     private long mark_id;
     private Date date;
     private String comment;
@@ -11,7 +14,8 @@ public class Mark {
     private long eating;
     private long child_id;
 
-    public Mark() {
+    public Mark(Date date) {
+        this.date = date;
     }
 
     public Mark(long mark_id, Date date, String comment, long behaviour, long sleeping, long eating, long child_id) {
@@ -78,6 +82,17 @@ public class Mark {
 
     public void setChild_id(long child_id) {
         this.child_id = child_id;
+    }
+
+    public String getPrettyDate() {
+        return sdf.format(date);
+    }
+
+    /**
+     * @return average mark in range 0..1
+     */
+    public float getAvgMark() {
+        return ((float) behaviour + sleeping + eating) / 5 / 3;
     }
 
     @Override

@@ -24,6 +24,7 @@ import ua.nure.havrysh.kindergarten.adapters.BaseBindableAdapter;
 import ua.nure.havrysh.kindergarten.model.Child;
 import ua.nure.havrysh.kindergarten.model.Group;
 import ua.nure.havrysh.kindergarten.model.Human;
+import ua.nure.havrysh.kindergarten.rest.MyCallback;
 import ua.nure.havrysh.kindergarten.rest.Rest;
 
 /**
@@ -53,7 +54,7 @@ public class GroupsFragment extends Fragment {
             }
         });
 
-        Rest.get().getGroups().enqueue(new Callback<List<Group>>() {
+        Rest.get().getGroups().enqueue(new MyCallback<List<Group>>() {
             @Override
             public void onResponse(Call<List<Group>> call, final Response<List<Group>> response) {
 
@@ -64,7 +65,7 @@ public class GroupsFragment extends Fragment {
 
                         final View v = super.getView(position, convertView, parent);
                         Group g = (Group) adapter.getItem(position);
-                        Rest.get().getHuman(g.getTeacher_id()).enqueue(new Callback<Human>() {
+                        Rest.get().getHuman(g.getTeacher_id()).enqueue(new MyCallback<Human>() {
                             @Override
                             public void onResponse(Call<Human> call, Response<Human> response) {
                                 Human h = response.body();
@@ -77,7 +78,7 @@ public class GroupsFragment extends Fragment {
                             }
                         });
 
-                        Rest.get().getChildren(g.getGroup_id()).enqueue(new Callback<List<Child>>() {
+                        Rest.get().getChildren(g.getGroup_id()).enqueue(new MyCallback<List<Child>>() {
                             @Override
                             public void onResponse(Call<List<Child>> call, Response<List<Child>> response) {
                                 ((TextView) v.findViewById(R.id.text_childrenCount)).setText(String.format("%d childrens", response.body().size()));

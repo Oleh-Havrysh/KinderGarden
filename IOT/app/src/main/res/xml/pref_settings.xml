@@ -1,0 +1,11 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+        android:key="id"
+        android:digits="true"
+        android:title="Child id"></EditTextPreference>
+
+    <EditTextPreference
+        android:key="ip"
+        android:title="Server address"></EditTextPreference>
+</PreferenceScreen>

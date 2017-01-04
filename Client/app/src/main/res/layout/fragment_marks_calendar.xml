@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ua.nure.havrysh.kindergarten.ui.markscalendar.MarksCalendarFragment"
+    android:orientation="vertical">
+
+    <TextView
+        android:text="Child` diary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView15" />
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:text="&lt;-"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_prev" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_mounth"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:textSize="20sp" />
+
+        <Button
+            android:text="-&gt;"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_next" />
+    </TableRow>
+
+    <ua.nure.havrysh.kindergarten.ui.markscalendar.MarksCalendar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/marks_calendar"
+        android:layout_margin="16dp">
+
+    </ua.nure.havrysh.kindergarten.ui.markscalendar.MarksCalendar>
+
+</LinearLayout>

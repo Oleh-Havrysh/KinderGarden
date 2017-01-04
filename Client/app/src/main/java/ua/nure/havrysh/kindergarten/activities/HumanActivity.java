@@ -10,6 +10,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import ua.nure.havrysh.kindergarten.model.Human;
+import ua.nure.havrysh.kindergarten.rest.MyCallback;
 import ua.nure.havrysh.kindergarten.rest.Rest;
 
 public class HumanActivity extends AppCompatActivity {
@@ -25,7 +26,7 @@ public class HumanActivity extends AppCompatActivity {
         long humanId = getIntent().getLongExtra(EXTRA_HUMAN_ID, -1);
 
         if (humanId != -1) {
-            Rest.get().getHuman(humanId).enqueue(new Callback<Human>() {
+            Rest.get().getHuman(humanId).enqueue(new MyCallback<Human>() {
                 @Override
                 public void onResponse(Call<Human> call, Response<Human> response) {
                     h = response.body();

@@ -16,9 +16,10 @@ import retrofit2.Response;
 import ua.nure.havrysh.kindergarten.model.Announcement;
 import kindergarden.hakito.kindergardenclient.R;
 import kindergarden.hakito.kindergardenclient.databinding.ActivityAnnouncementBinding;
+import ua.nure.havrysh.kindergarten.rest.MyCallback;
 import ua.nure.havrysh.kindergarten.rest.Rest;
 
-public class AnnouncementActivity extends AppCompatActivity {
+public class AnnouncementActivity extends BaseEditingActivity {
 
     public static final String EXTRA_ANN = "ann";
     Announcement announcement;
@@ -30,7 +31,7 @@ public class AnnouncementActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_announcement);
 
         if (getIntent().hasExtra(EXTRA_ANN)) {
-            Rest.get().getAnnouncement(getIntent().getLongExtra(EXTRA_ANN, 0)).enqueue(new Callback<Announcement>() {
+            Rest.get().getAnnouncement(getIntent().getLongExtra(EXTRA_ANN, 0)).enqueue(new MyCallback<Announcement>() {
                 @Override
                 public void onResponse(Call<Announcement> call, Response<Announcement> response) {
                     announcement = response.body();

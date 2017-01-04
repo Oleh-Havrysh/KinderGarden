@@ -80,6 +80,10 @@ public class Child {
         this.notice = notice;
     }
 
+    public String getIcon() {
+        return "child_" + child_id;
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Child ");

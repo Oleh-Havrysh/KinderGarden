@@ -41,8 +41,11 @@ public interface Controller {
     @GET("announcements/{id}")
     Call<Announcement> getAnnouncement(@Path("id") long id);
 
-    @GET("marks/{childId}")
-    Call<List<Mark>> getMarks(@Path("childId") long childId);
+    @GET("children/{id}/marks")
+    Call<List<Mark>> getMarks(@Path("id") long childId);
+
+    @GET("marks/{id}")
+    Call<Mark> getMark(@Path("id") long markId);
 
     @GET("messages/{from}/{to}")
     Call<List<Message>> getMessages(@Path("from") long from, @Path("to") long to);

@@ -22,6 +22,7 @@ import ua.nure.havrysh.kindergarten.adapters.BaseBindableAdapter;
 import ua.nure.havrysh.kindergarten.model.Child;
 import ua.nure.havrysh.kindergarten.model.Group;
 import ua.nure.havrysh.kindergarten.model.Human;
+import ua.nure.havrysh.kindergarten.rest.MyCallback;
 import ua.nure.havrysh.kindergarten.rest.Rest;
 
 public class GroupActivity extends AppCompatActivity {
@@ -47,7 +48,7 @@ public class GroupActivity extends AppCompatActivity {
         });
 
         if (groupId > 0) {
-            Rest.get().getGroup(groupId).enqueue(new Callback<Group>() {
+            Rest.get().getGroup(groupId).enqueue(new MyCallback<Group>() {
                 @Override
                 public void onResponse(Call<Group> call, Response<Group> response) {
                     final Group g = response.body();
@@ -62,7 +63,7 @@ public class GroupActivity extends AppCompatActivity {
                         }
                     });
 
-                    Rest.get().getHuman(g.getTeacher_id()).enqueue(new Callback<Human>() {
+                    Rest.get().getHuman(g.getTeacher_id()).enqueue(new MyCallback<Human>() {
                         @Override
                         public void onResponse(Call<Human> call, Response<Human> response) {
                             ((TextView) findViewById(R.id.text_teacher)).setText(String.format("%s %s", response.body().getName(), response.body().getSurname()));
@@ -74,7 +75,7 @@ public class GroupActivity extends AppCompatActivity {
                         }
                     });
 
-                    Rest.get().getChildren(g.getGroup_id()).enqueue(new Callback<List<Child>>() {
+                    Rest.get().getChildren(g.getGroup_id()).enqueue(new MyCallback<List<Child>>() {
                         @Override
                         public void onResponse(Call<List<Child>> call, Response<List<Child>> response) {
 

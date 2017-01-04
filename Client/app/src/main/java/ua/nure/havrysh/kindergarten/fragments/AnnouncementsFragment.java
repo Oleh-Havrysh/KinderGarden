@@ -21,6 +21,7 @@ import ua.nure.havrysh.kindergarten.adapters.BaseBindableAdapter;
 import kindergarden.hakito.kindergardenclient.BR;
 import kindergarden.hakito.kindergardenclient.R;
 import ua.nure.havrysh.kindergarten.model.Announcement;
+import ua.nure.havrysh.kindergarten.rest.MyCallback;
 import ua.nure.havrysh.kindergarten.rest.Rest;
 
 /**
@@ -53,7 +54,7 @@ public class AnnouncementsFragment extends Fragment {
         });
 
         listView = (ListView) v.findViewById(R.id.list_view);
-        Rest.get().getAnnouncements().enqueue(new Callback<List<Announcement>>() {
+        Rest.get().getAnnouncements().enqueue(new MyCallback<List<Announcement>>() {
             @Override
             public void onResponse(Call<List<Announcement>> call, Response<List<Announcement>> response) {
                 listView.setAdapter(new BaseBindableAdapter<>(v.getContext(), response.body(), R.layout.item_announcement, BR.ann));

@@ -85,7 +85,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="phone"
-                android:text="@={human.phone}" />
+                android:text="@={human.phone}"
+                android:autoLink="phone" />
         </TableRow>
 
         <TableRow
