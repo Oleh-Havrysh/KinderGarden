@@ -12,11 +12,10 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import kindergarden.hakito.kindergardenclient.BR;
-import kindergarden.hakito.kindergardenclient.R;
-import kindergarden.hakito.kindergardenclient.databinding.ActivityGroupBinding;
+import kindergarten.hakito.kindergartenclient.BR;
+import kindergarten.hakito.kindergartenclient.R;
+import kindergarten.hakito.kindergartenclient.databinding.ActivityGroupBinding;
 import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
 import ua.nure.havrysh.kindergarten.adapters.BaseBindableAdapter;
 import ua.nure.havrysh.kindergarten.model.Child;

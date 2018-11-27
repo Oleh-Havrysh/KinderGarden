@@ -4,10 +4,9 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import kindergarden.hakito.kindergardenclient.R;
-import kindergarden.hakito.kindergardenclient.databinding.ActivityHumanBinding;
+import kindergarten.hakito.kindergartenclient.R;
+import kindergarten.hakito.kindergartenclient.databinding.ActivityHumanBinding;
 import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
 import ua.nure.havrysh.kindergarten.model.Human;
 import ua.nure.havrysh.kindergarten.rest.MyCallback;

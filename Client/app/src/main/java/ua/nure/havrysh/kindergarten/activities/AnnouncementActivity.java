@@ -2,20 +2,18 @@ package ua.nure.havrysh.kindergarten.activities;
 
 import android.content.DialogInterface;
 import android.databinding.DataBindingUtil;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.DatePicker;
 
 import java.util.Calendar;
 
+import kindergarten.hakito.kindergartenclient.R;
+import kindergarten.hakito.kindergartenclient.databinding.ActivityAnnouncementBinding;
 import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
 import ua.nure.havrysh.kindergarten.model.Announcement;
-import kindergarden.hakito.kindergardenclient.R;
-import kindergarden.hakito.kindergardenclient.databinding.ActivityAnnouncementBinding;
 import ua.nure.havrysh.kindergarten.rest.MyCallback;
 import ua.nure.havrysh.kindergarten.rest.Rest;
 

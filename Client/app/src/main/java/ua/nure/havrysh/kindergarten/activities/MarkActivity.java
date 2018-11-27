@@ -7,8 +7,8 @@ import android.os.Bundle;
 
 import java.sql.Date;
 
-import kindergarden.hakito.kindergardenclient.R;
-import kindergarden.hakito.kindergardenclient.databinding.ActivityMarkBinding;
+import kindergarten.hakito.kindergartenclient.R;
+import kindergarten.hakito.kindergartenclient.databinding.ActivityMarkBinding;
 import retrofit2.Call;
 import retrofit2.Response;
 import ua.nure.havrysh.kindergarten.model.Mark;
