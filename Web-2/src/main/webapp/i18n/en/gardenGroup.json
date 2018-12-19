@@ -1,0 +1,22 @@
+{
+  "myApp2App": {
+    "gardenGroup": {
+      "home": {
+        "title": "Garden Groups",
+        "createLabel": "Create a new Garden Group",
+        "createOrEditLabel": "Create or edit a Garden Group"
+      },
+      "created": "A new Garden Group is created with identifier {{ param }}",
+      "updated": "A Garden Group is updated with identifier {{ param }}",
+      "deleted": "A Garden Group is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Garden Group {{ id }}?"
+      },
+      "detail": {
+        "title": "Garden Group"
+      },
+      "name": "Name",
+      "teacher": "Teacher"
+    }
+  }
+}

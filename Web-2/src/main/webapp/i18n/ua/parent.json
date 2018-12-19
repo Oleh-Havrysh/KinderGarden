@@ -1,0 +1,27 @@
+{
+  "myApp2App": {
+    "parent": {
+      "home": {
+        "title": "Parents",
+        "createLabel": "Створити новий Parent",
+        "createOrEditLabel": "Створити чи редагувати Parent"
+      },
+      "created": "Новий Parent створений з ідентифікатором {{ param }}",
+      "updated": "Parent оновлений з ідентифікатором {{ param }}",
+      "deleted": "Parent видалений з ідентифікатором {{ param }}",
+      "delete": {
+        "question": "Ви впевнені, що хочете видалити Parent {{ id }}?"
+      },
+      "detail": {
+        "title": "Parent"
+      },
+      "name": "Name",
+      "surname": "Surname",
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "login": "Login",
+      "password": "Password"
+    }
+  }
+}

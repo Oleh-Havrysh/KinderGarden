@@ -1,0 +1,36 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.mycompany.myapp",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "5.7.1",
+    "applicationType": "gateway",
+    "baseName": "myApp2",
+    "packageName": "com.mycompany.myapp",
+    "packageFolder": "com/mycompany/myapp",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "gradle",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NzE2NzU3YjVmNjhmMWRmYTYwOGFhYWEyZTg1Y2ZjM2Y5ZDEzYjJiYjI1MmIyNzZmYjg5NTQ0YWExNGU2M2NhYjkzNmQ2ZTJjYzQ3ODExYjM4NWUyNzVmYTk2MWIzZjllYjY1MWM4YmI5OWNmMWY3MGY5MTc1ODUwMjBiYjQ4ZDE=",
+    "clientFramework": "react",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": ["en", "ru", "ua"]
+  }
+}

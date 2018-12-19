@@ -1,0 +1,25 @@
+{
+  "myApp2App": {
+    "child": {
+      "home": {
+        "title": "Children",
+        "createLabel": "Создать новый Child",
+        "createOrEditLabel": "Создать или отредактировать Child"
+      },
+      "created": "Новый Child создан с идентификатором {{ param }}",
+      "updated": "Child обновлен с идентификатором {{ param }}",
+      "deleted": "Child удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Child {{ id }}?"
+      },
+      "detail": {
+        "title": "Child"
+      },
+      "name": "Name",
+      "surname": "Surname",
+      "birthDate": "Birth Date",
+      "parent": "Parent",
+      "group": "Group"
+    }
+  }
+}
