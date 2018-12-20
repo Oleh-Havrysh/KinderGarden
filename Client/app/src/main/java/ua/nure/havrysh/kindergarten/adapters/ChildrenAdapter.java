@@ -4,8 +4,8 @@ import android.content.Context;
 
 import java.util.List;
 
-import kindergarden.hakito.kindergardenclient.BR;
-import kindergarden.hakito.kindergardenclient.R;
+import kindergarten.hakito.kindergartenclient.BR;
+import kindergarten.hakito.kindergartenclient.R;
 import ua.nure.havrysh.kindergarten.model.Child;
 
 /**

@@ -1,13 +1,12 @@
 package ua.nure.havrysh.kindergarten.fragments;
 
-
-import android.os.Bundle;
 import android.app.Fragment;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import kindergarden.hakito.kindergardenclient.R;
+import kindergarten.hakito.kindergartenclient.R;
 
 /**
  * A simple {@link Fragment} subclass.

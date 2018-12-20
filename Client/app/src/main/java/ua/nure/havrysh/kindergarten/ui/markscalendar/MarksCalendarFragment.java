@@ -1,6 +1,5 @@
 package ua.nure.havrysh.kindergarten.ui.markscalendar;
 
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -13,9 +12,8 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import kindergarden.hakito.kindergardenclient.R;
+import kindergarten.hakito.kindergartenclient.R;
 import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
 import ua.nure.havrysh.kindergarten.model.Mark;
 import ua.nure.havrysh.kindergarten.rest.MyCallback;

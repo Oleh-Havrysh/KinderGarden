@@ -10,10 +10,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import kindergarden.hakito.kindergardenclient.R;
+import kindergarten.hakito.kindergartenclient.R;
 import ua.nure.havrysh.kindergarten.activities.ChildActivity;
-import ua.nure.havrysh.kindergarten.adapters.ChildrenAdapter;
-import ua.nure.havrysh.kindergarten.rest.Rest;
 
 /**
  * Created by Oleg on 16.10.2016.

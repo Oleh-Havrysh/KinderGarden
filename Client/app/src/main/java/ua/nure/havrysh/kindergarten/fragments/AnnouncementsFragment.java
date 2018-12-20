@@ -1,9 +1,8 @@
 package ua.nure.havrysh.kindergarten.fragments;
 
-
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,13 +12,12 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import kindergarten.hakito.kindergartenclient.BR;
+import kindergarten.hakito.kindergartenclient.R;
 import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
 import ua.nure.havrysh.kindergarten.activities.AnnouncementActivity;
 import ua.nure.havrysh.kindergarten.adapters.BaseBindableAdapter;
-import kindergarden.hakito.kindergardenclient.BR;
-import kindergarden.hakito.kindergardenclient.R;
 import ua.nure.havrysh.kindergarten.model.Announcement;
 import ua.nure.havrysh.kindergarten.rest.MyCallback;
 import ua.nure.havrysh.kindergarten.rest.Rest;

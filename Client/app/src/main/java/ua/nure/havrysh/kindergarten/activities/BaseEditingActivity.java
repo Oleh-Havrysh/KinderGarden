@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import kindergarden.hakito.kindergardenclient.R;
+import kindergarten.hakito.kindergartenclient.R;
 
 /**
  * Created by Oleg on 20.12.2016.

@@ -1,6 +1,5 @@
 package ua.nure.havrysh.kindergarten.fragments;
 
-
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,10 +13,9 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import kindergarden.hakito.kindergardenclient.BR;
-import kindergarden.hakito.kindergardenclient.R;
+import kindergarten.hakito.kindergartenclient.BR;
+import kindergarten.hakito.kindergartenclient.R;
 import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
 import ua.nure.havrysh.kindergarten.activities.GroupActivity;
 import ua.nure.havrysh.kindergarten.adapters.BaseBindableAdapter;

@@ -12,11 +12,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import kindergarden.hakito.kindergardenclient.R;
-import kindergarden.hakito.kindergardenclient.databinding.NavHeaderMainBinding;
+import kindergarten.hakito.kindergartenclient.R;
+import kindergarten.hakito.kindergartenclient.databinding.NavHeaderMainBinding;
 import ua.nure.havrysh.kindergarten.LoginHelper;
 import ua.nure.havrysh.kindergarten.fragments.AnnouncementsFragment;
-import ua.nure.havrysh.kindergarten.fragments.ChildrenFragment;
 import ua.nure.havrysh.kindergarten.fragments.GroupsFragment;
 import ua.nure.havrysh.kindergarten.fragments.SettingsFragment;
 
