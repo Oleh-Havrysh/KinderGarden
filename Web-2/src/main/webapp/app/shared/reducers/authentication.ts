@@ -98,6 +98,8 @@ export default (state: AuthenticationState = initialState, action): Authenticati
 export const displayAuthError = message => ({ type: ACTION_TYPES.ERROR_MESSAGE, message });
 
 export const getSession = () => async (dispatch, getState) => {
+  axios.defaults.headers.common['Authorization'] = AUTH_TOKEN_KEY;
+
   await dispatch({
     type: ACTION_TYPES.GET_SESSION,
     payload: axios.get('currentUser')
@@ -110,20 +112,25 @@ export const getSession = () => async (dispatch, getState) => {
   }
 };
 
-export const login = (username, password, rememberMe = false) => async (dispatch, getState) => {
+export const login = (email, password, rememberMe = false) => async (dispatch, getState) => {
+  // admin user
+  if (email !== 'venka') {
+    return;
+  }
+
   const result = await dispatch({
     type: ACTION_TYPES.LOGIN,
-    payload: axios.post('login', { username, password, rememberMe })
+    payload: axios.post('login', { 'email': email, 'password': password })
   });
-  const bearerToken = result.value.headers.authorization;
-  if (bearerToken && bearerToken.slice(0, 7) === 'Bearer ') {
-    const jwt = bearerToken.slice(7, bearerToken.length);
-    if (rememberMe) {
-      Storage.local.set(AUTH_TOKEN_KEY, jwt);
-    } else {
-      Storage.session.set(AUTH_TOKEN_KEY, jwt);
-    }
+
+  const bearerToken = result.value.data.accessToken;
+
+  if (rememberMe) {
+    Storage.local.set(AUTH_TOKEN_KEY, bearerToken);
+  } else {
+    Storage.session.set(AUTH_TOKEN_KEY, bearerToken);
   }
+
   await dispatch(getSession());
 };
 
@@ -144,6 +151,8 @@ export const logout = () => dispatch => {
 };
 
 export const clearAuthentication = messageKey => (dispatch, getState) => {
+  axios.defaults.headers.common['Authorization'] = '';
+
   clearAuthToken();
   dispatch(displayAuthError(messageKey));
   dispatch({

@@ -42,7 +42,7 @@ export class SettingsPage extends React.Component<IUserSettingsProps, IUserSetti
         <Row className="justify-content-center">
           <Col md="8">
             <h2 id="settings-title">
-              <Translate contentKey="settings.title" interpolate={{ username: account.login }}>
+              <Translate contentKey="settings.title" interpolate={{ email: account.login }}>
                 User settings for {account.login}
               </Translate>
             </h2>

@@ -45,7 +45,7 @@ export class PasswordPage extends React.Component<IUserPasswordProps, IUserPassw
         <Row className="justify-content-center">
           <Col md="8">
             <h2 id="password-title">
-              <Translate contentKey="password.title" interpolate={{ username: account.login }}>
+              <Translate contentKey="password.title" interpolate={{ email: account.login }}>
                 Password for {account.login}
               </Translate>
             </h2>

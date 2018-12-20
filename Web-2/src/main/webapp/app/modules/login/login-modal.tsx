@@ -12,9 +12,9 @@ export interface ILoginModalProps {
 }
 
 class LoginModal extends React.Component<ILoginModalProps> {
-  handleSubmit = (event, errors, { username, password, rememberMe }) => {
+  handleSubmit = (event, errors, { email, password, rememberMe }) => {
     const { handleLogin } = this.props;
-    handleLogin(username, password, rememberMe);
+    handleLogin(email, password, rememberMe);
   };
 
   render() {
@@ -39,11 +39,11 @@ class LoginModal extends React.Component<ILoginModalProps> {
               </Col>
               <Col md="12">
                 <AvField
-                  name="username"
-                  label={translate('global.form.username')}
-                  placeholder={translate('global.form.username.placeholder')}
+                  name="email"
+                  label={translate('global.form.email')}
+                  placeholder={translate('global.form.email.placeholder')}
                   required
-                  errorMessage="Username cannot be empty!"
+                  errorMessage="Email cannot be empty!"
                   autoFocus
                 />
                 <AvField
