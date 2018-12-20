@@ -103,6 +103,9 @@ public class MarksCalendar extends TableLayout {
         }
         Calendar c = Calendar.getInstance();
         for (Mark m : marks) {
+            if (m.getDate() == null) {
+                continue;
+            }
             c.setTime(m.getDate());
             if (c.get(YEAR) == day.get(YEAR) &&
                     c.get(Calendar.DAY_OF_YEAR) == day.get(Calendar.DAY_OF_YEAR)) {
@@ -139,9 +142,9 @@ public class MarksCalendar extends TableLayout {
                     @Override
                     public void onClick(View v) {
                         if (m == null) {
-                            MarkActivity.startForCreating(context, date);
+                            MarkActivity.Companion.startForCreating(context, date);
                         } else {
-                            MarkActivity.start(context, m.getMark_id());
+                            MarkActivity.Companion.start(context, m.getId());
                         }
 
                     }

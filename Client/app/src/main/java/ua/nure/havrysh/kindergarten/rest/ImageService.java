@@ -49,7 +49,7 @@ public class ImageService {
 
         Request request = new Request.Builder()
                 .post(requestBody)
-                .url(Rest.SERVER_URL + "image/" + path)
+                .url(Rest.INSTANCE.getSERVER_URL() + "image/" + path)
                 .build();
 
 
@@ -71,7 +71,8 @@ public class ImageService {
     }
 
     public void getBitmap(String image, final BitmapCallback callback) {
-        Request request = new Request.Builder().url(Rest.SERVER_URL + "image/" + image).build();
+        Request request = new Request.Builder().url(Rest.INSTANCE.getSERVER_URL()
+                                                    + "image/" + image).build();
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {

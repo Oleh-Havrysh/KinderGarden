@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:bind="http://schemas.android.com/tools">
-
+<layout>
+    
     <data>
-
+        
         <variable
             name="child"
-            type="ua.nure.havrysh.kindergarten.model.Child" />
+            type="ua.nure.havrysh.kindergarten.model.Child"/>
     </data>
-
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
+        
         <TextView
             android:id="@+id/child_item_name"
             android:layout_width="wrap_content"
@@ -21,20 +22,18 @@
             android:layout_marginStart="11dp"
             android:layout_marginTop="11dp"
             android:layout_toEndOf="@+id/child_item_photo"
-            android:text="@={child.name}" />
-
+            android:text="@{child.fullName}"/>
+        
         <ImageView
             android:id="@+id/child_item_photo"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:adjustViewBounds="false"
             android:cropToPadding="false"
             android:scaleType="fitXY"
-            android:src="@drawable/child"
-            app:srcCompat="@drawable/child"
-            bind:imageBitmap="@{child.icon}" />
+            app:srcCompat="@drawable/child"/>
     </RelativeLayout>
 </layout>
