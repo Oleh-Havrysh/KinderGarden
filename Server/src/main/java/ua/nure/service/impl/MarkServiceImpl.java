@@ -1,6 +1,7 @@
 package ua.nure.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ua.nure.model.Child;
@@ -8,6 +9,7 @@ import ua.nure.model.Mark;
 import ua.nure.repository.MarkRepository;
 import ua.nure.service.MarkService;
 
+import java.sql.Date;
 import java.util.List;
 
 @Service
@@ -31,4 +33,10 @@ public class MarkServiceImpl implements MarkService {
     public List<Mark> findByChild(Child child) {
         return markRepository.findByChild(child);
     }
+
+    @Override
+    public List<Mark> findByChildAndDate(Date date, Child child) {
+        return markRepository.findByChildAndDate(child, date);
+    }
+
 }

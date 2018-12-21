@@ -3,7 +3,7 @@ package ua.nure.model;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.sql.Date;
 
 @Entity
 @Table(name = "children")
@@ -18,7 +18,7 @@ public class Child {
     @Column
     private String surname;
     @Column
-    private LocalDate birthDate;
+    private Date birthDate;
     @ManyToOne
     @JoinColumn(name = "group_id")
     private Group group;
@@ -28,7 +28,7 @@ public class Child {
     @Column
     private String notice;
 
-    public Child(String name, String surname, LocalDate birthDate) {
+    public Child(String name, String surname, Date birthDate) {
         this.name = name;
         this.surname = surname;
         this.birthDate = birthDate;
@@ -69,11 +69,11 @@ public class Child {
         this.notice = notice;
     }
 
-    public LocalDate getBirthDate() {
+    public Date getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(LocalDate birthDate) {
+    public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
 

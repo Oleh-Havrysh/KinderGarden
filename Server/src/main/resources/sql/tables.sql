@@ -51,3 +51,8 @@ id varchar(64) primary key,
 name varchar(20),
 teacher_id varchar(64) references humans(id)
 );
+create table sensor_data(
+id varchar(64) primary key,
+activity int,
+child_id varchar(64) references children(id)
+);

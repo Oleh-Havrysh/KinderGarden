@@ -3,6 +3,7 @@ package ua.nure.service;
 import ua.nure.model.Child;
 import ua.nure.model.Mark;
 
+import java.sql.Date;
 import java.util.List;
 
 public interface MarkService {
@@ -11,4 +12,6 @@ public interface MarkService {
     void save(Mark mark);
 
     List<Mark> findByChild(Child child);
+
+    List<Mark> findByChildAndDate(Date date, Child child);
 }

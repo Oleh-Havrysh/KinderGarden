@@ -22,6 +22,20 @@ public class StatisticsController {
 
     @PostMapping("/sensors")
     public void saveSensorData(@RequestBody SensorData data) {
+        List<Mark> marks = markService.findByChild(data.getChild());
+        Mark mark;
+        java.util.Date utilDate = new java.util.Date();
+        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+        if (!marks.isEmpty()) {
+            mark = markService.findByChildAndDate(sqlDate, data.getChild()).get(0);
+        } else {
+            mark = new Mark();
+            mark.setChild(data.getChild());
+            mark.setDate(sqlDate);
+        }
+        mark.setActivity(data.getActivity());
+
+        markService.save(mark);
         sensorDataService.save(data);
     }
 
