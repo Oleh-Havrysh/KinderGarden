@@ -2,19 +2,14 @@ package ua.nure.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ua.nure.model.Group;
 import ua.nure.service.GroupService;
 import ua.nure.util.HeaderUtil;
-import ua.nure.util.PaginationUtil;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.List;
 
 /**
  * REST controller for managing GardenGroup.

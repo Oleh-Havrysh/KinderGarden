@@ -81,8 +81,8 @@ export class ChildUpdate extends React.Component<IChildUpdateProps, IChildUpdate
       <div>
         <Row className="justify-content-center">
           <Col md="8">
-            <h2 id="myApp2App.child.home.createOrEditLabel">
-              <Translate contentKey="myApp2App.child.home.createOrEditLabel">Create or edit a Child</Translate>
+            <h2 id="myApp.child.home.createOrEditLabel">
+              <Translate contentKey="myApp.child.home.createOrEditLabel">Create or edit a Child</Translate>
             </h2>
           </Col>
         </Row>
@@ -102,25 +102,25 @@ export class ChildUpdate extends React.Component<IChildUpdateProps, IChildUpdate
                 ) : null}
                 <AvGroup>
                   <Label id="nameLabel" for="name">
-                    <Translate contentKey="myApp2App.child.name">Name</Translate>
+                    <Translate contentKey="myApp.child.name">Name</Translate>
                   </Label>
                   <AvField id="child-name" type="text" name="name" />
                 </AvGroup>
                 <AvGroup>
                   <Label id="surnameLabel" for="surname">
-                    <Translate contentKey="myApp2App.child.surname">Surname</Translate>
+                    <Translate contentKey="myApp.child.surname">Surname</Translate>
                   </Label>
                   <AvField id="child-surname" type="text" name="surname" />
                 </AvGroup>
                 <AvGroup>
                   <Label id="birthDateLabel" for="birthDate">
-                    <Translate contentKey="myApp2App.child.birthDate">Birth Date</Translate>
+                    <Translate contentKey="myApp.child.birthDate">Birth Date</Translate>
                   </Label>
                   <AvField id="child-birthDate" type="date" className="form-control" name="birthDate" />
                 </AvGroup>
                 <AvGroup>
                   <Label for="parent.id">
-                    <Translate contentKey="myApp2App.child.parent">Parent</Translate>
+                    <Translate contentKey="myApp.child.parent">Parent</Translate>
                   </Label>
                   <AvInput id="child-parent" type="select" className="form-control" name="parent.id">
                     <option value="" key="0" />
@@ -135,7 +135,7 @@ export class ChildUpdate extends React.Component<IChildUpdateProps, IChildUpdate
                 </AvGroup>
                 <AvGroup>
                   <Label for="group.id">
-                    <Translate contentKey="myApp2App.child.group">Group</Translate>
+                    <Translate contentKey="myApp.child.group">Group</Translate>
                   </Label>
                   <AvInput id="child-group" type="select" className="form-control" name="group.id">
                     <option value="" key="0" />

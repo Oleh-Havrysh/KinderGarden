@@ -61,11 +61,11 @@ export class Child extends React.Component<IChildProps, IChildState> {
     return (
       <div>
         <h2 id="child-heading">
-          <Translate contentKey="myApp2App.child.home.title">Children</Translate>
+          <Translate contentKey="myApp.child.home.title">Children</Translate>
           <Link to={`${match.url}/new`} className="btn btn-primary float-right jh-create-entity" id="jh-create-entity">
             <FontAwesomeIcon icon="plus" />
             &nbsp;
-            <Translate contentKey="myApp2App.child.home.createLabel">Create new Child</Translate>
+            <Translate contentKey="myApp.child.home.createLabel">Create new Child</Translate>
           </Link>
         </h2>
         <div className="table-responsive">
@@ -76,19 +76,19 @@ export class Child extends React.Component<IChildProps, IChildState> {
                   <Translate contentKey="global.field.id">ID</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th className="hand" onClick={this.sort('name')}>
-                  <Translate contentKey="myApp2App.child.name">Name</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="myApp.child.name">Name</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th className="hand" onClick={this.sort('surname')}>
-                  <Translate contentKey="myApp2App.child.surname">Surname</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="myApp.child.surname">Surname</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th className="hand" onClick={this.sort('birthDate')}>
-                  <Translate contentKey="myApp2App.child.birthDate">Birth Date</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="myApp.child.birthDate">Birth Date</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th>
-                  <Translate contentKey="myApp2App.child.parent">Parent</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="myApp.child.parent">Parent</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th>
-                  <Translate contentKey="myApp2App.child.group">Group</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="myApp.child.group">Group</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th />
               </tr>
@@ -106,8 +106,8 @@ export class Child extends React.Component<IChildProps, IChildState> {
                   <td>
                     <TextFormat type="date" value={child.birthDate} format={APP_LOCAL_DATE_FORMAT} />
                   </td>
-                  <td>{child.parent ? <Link to={`parent/${child.parent.id}`}>{child.parent.id}</Link> : ''}</td>
-                  <td>{child.group ? <Link to={`garden-group/${child.group.id}`}>{child.group.id}</Link> : ''}</td>
+                  <td>{child.parent ? <Link to={`parent/${child.parent.id}`}>{child.parent.name}</Link> : ''}</td>
+                  <td>{child.group ? <Link to={`garden-group/${child.group.id}`}>{child.group.name}</Link> : ''}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${child.id}`} color="info" size="sm">

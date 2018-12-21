@@ -68,11 +68,11 @@ export class GardenGroup extends React.Component<IGardenGroupProps, IGardenGroup
     return (
       <div>
         <h2 id="garden-group-heading">
-          <Translate contentKey="myApp2App.gardenGroup.home.title">Garden Groups</Translate>
+          <Translate contentKey="myApp.gardenGroup.home.title">Garden Groups</Translate>
           <Link to={`${match.url}/new`} className="btn btn-primary float-right jh-create-entity" id="jh-create-entity">
             <FontAwesomeIcon icon="plus" />
             &nbsp;
-            <Translate contentKey="myApp2App.gardenGroup.home.createLabel">Create new Garden Group</Translate>
+            <Translate contentKey="myApp.gardenGroup.home.createLabel">Create new Garden Group</Translate>
           </Link>
         </h2>
         <div className="table-responsive">
@@ -91,10 +91,10 @@ export class GardenGroup extends React.Component<IGardenGroupProps, IGardenGroup
                     <Translate contentKey="global.field.id">ID</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
                   <th className="hand" onClick={this.sort('name')}>
-                    <Translate contentKey="myApp2App.gardenGroup.name">Name</Translate> <FontAwesomeIcon icon="sort" />
+                    <Translate contentKey="myApp.gardenGroup.name">Name</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
                   <th>
-                    <Translate contentKey="myApp2App.gardenGroup.teacher">Teacher</Translate> <FontAwesomeIcon icon="sort" />
+                    <Translate contentKey="myApp.gardenGroup.teacher">Teacher</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
                   <th />
                 </tr>
@@ -108,7 +108,7 @@ export class GardenGroup extends React.Component<IGardenGroupProps, IGardenGroup
                       </Button>
                     </td>
                     <td>{gardenGroup.name}</td>
-                    <td>{gardenGroup.teacher ? <Link to={`teacher/${gardenGroup.teacher.id}`}>{gardenGroup.teacher.id}</Link> : ''}</td>
+                    <td>{gardenGroup.teacher ? <Link to={`teacher/${gardenGroup.teacher.id}`}>{gardenGroup.teacher.name}</Link> : ''}</td>
                     <td className="text-right">
                       <div className="btn-group flex-btn-group-container">
                         <Button tag={Link} to={`${match.url}/${gardenGroup.id}`} color="info" size="sm">

@@ -135,6 +135,8 @@ export const login = (email, password, rememberMe = false) => async (dispatch, g
 };
 
 export const clearAuthToken = () => {
+  axios.defaults.headers.common['Authorization'] = '';
+
   if (Storage.local.get(AUTH_TOKEN_KEY)) {
     Storage.local.remove(AUTH_TOKEN_KEY);
   }
@@ -151,8 +153,6 @@ export const logout = () => dispatch => {
 };
 
 export const clearAuthentication = messageKey => (dispatch, getState) => {
-  axios.defaults.headers.common['Authorization'] = '';
-
   clearAuthToken();
   dispatch(displayAuthError(messageKey));
   dispatch({

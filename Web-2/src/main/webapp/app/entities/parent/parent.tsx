@@ -53,11 +53,11 @@ export class Parent extends React.Component<IParentProps, IParentState> {
     return (
       <div>
         <h2 id="parent-heading">
-          <Translate contentKey="myApp2App.parent.home.title">Parents</Translate>
+          <Translate contentKey="myApp.parent.home.title">Parents</Translate>
           <Link to={`${match.url}/new`} className="btn btn-primary float-right jh-create-entity" id="jh-create-entity">
             <FontAwesomeIcon icon="plus" />
             &nbsp;
-            <Translate contentKey="myApp2App.parent.home.createLabel">Create new Parent</Translate>
+            <Translate contentKey="myApp.parent.home.createLabel">Create new Parent</Translate>
           </Link>
         </h2>
         <div className="table-responsive">
@@ -68,25 +68,22 @@ export class Parent extends React.Component<IParentProps, IParentState> {
                   <Translate contentKey="global.field.id">ID</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th className="hand" onClick={this.sort('name')}>
-                  <Translate contentKey="myApp2App.parent.name">Name</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="myApp.parent.name">Name</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th className="hand" onClick={this.sort('surname')}>
-                  <Translate contentKey="myApp2App.parent.surname">Surname</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="myApp.parent.surname">Surname</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th className="hand" onClick={this.sort('address')}>
-                  <Translate contentKey="myApp2App.parent.address">Address</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="myApp.parent.address">Address</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th className="hand" onClick={this.sort('phone')}>
-                  <Translate contentKey="myApp2App.parent.phone">Phone</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="myApp.parent.phone">Phone</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th className="hand" onClick={this.sort('email')}>
-                  <Translate contentKey="myApp2App.parent.email">Email</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="myApp.parent.email">Email</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th className="hand" onClick={this.sort('login')}>
-                  <Translate contentKey="myApp2App.parent.login">Login</Translate> <FontAwesomeIcon icon="sort" />
-                </th>
-                <th className="hand" onClick={this.sort('password')}>
-                  <Translate contentKey="myApp2App.parent.password">Password</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="myApp.parent.login">Login</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th />
               </tr>
@@ -96,7 +93,7 @@ export class Parent extends React.Component<IParentProps, IParentState> {
                 <tr key={`entity-${i}`}>
                   <td>
                     <Button tag={Link} to={`${match.url}/${parent.id}`} color="link" size="sm">
-                      {parent.id}
+                      {parent.name}
                     </Button>
                   </td>
                   <td>{parent.name}</td>
@@ -105,7 +102,6 @@ export class Parent extends React.Component<IParentProps, IParentState> {
                   <td>{parent.phone}</td>
                   <td>{parent.email}</td>
                   <td>{parent.login}</td>
-                  <td>{parent.password}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${parent.id}`} color="info" size="sm">

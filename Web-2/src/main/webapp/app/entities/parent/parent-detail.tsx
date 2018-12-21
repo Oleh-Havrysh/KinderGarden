@@ -25,51 +25,45 @@ export class ParentDetail extends React.Component<IParentDetailProps> {
       <Row>
         <Col md="8">
           <h2>
-            <Translate contentKey="myApp2App.parent.detail.title">Parent</Translate> [<b>{parentEntity.id}</b>]
+            <Translate contentKey="myApp.parent.detail.title">Parent</Translate> [<b>{parentEntity.id}</b>]
           </h2>
           <dl className="jh-entity-details">
             <dt>
               <span id="name">
-                <Translate contentKey="myApp2App.parent.name">Name</Translate>
+                <Translate contentKey="myApp.parent.name">Name</Translate>
               </span>
             </dt>
             <dd>{parentEntity.name}</dd>
             <dt>
               <span id="surname">
-                <Translate contentKey="myApp2App.parent.surname">Surname</Translate>
+                <Translate contentKey="myApp.parent.surname">Surname</Translate>
               </span>
             </dt>
             <dd>{parentEntity.surname}</dd>
             <dt>
               <span id="address">
-                <Translate contentKey="myApp2App.parent.address">Address</Translate>
+                <Translate contentKey="myApp.parent.address">Address</Translate>
               </span>
             </dt>
             <dd>{parentEntity.address}</dd>
             <dt>
               <span id="phone">
-                <Translate contentKey="myApp2App.parent.phone">Phone</Translate>
+                <Translate contentKey="myApp.parent.phone">Phone</Translate>
               </span>
             </dt>
             <dd>{parentEntity.phone}</dd>
             <dt>
               <span id="email">
-                <Translate contentKey="myApp2App.parent.email">Email</Translate>
+                <Translate contentKey="myApp.parent.email">Email</Translate>
               </span>
             </dt>
             <dd>{parentEntity.email}</dd>
             <dt>
               <span id="login">
-                <Translate contentKey="myApp2App.parent.login">Login</Translate>
+                <Translate contentKey="myApp.parent.login">Login</Translate>
               </span>
             </dt>
             <dd>{parentEntity.login}</dd>
-            <dt>
-              <span id="password">
-                <Translate contentKey="myApp2App.parent.password">Password</Translate>
-              </span>
-            </dt>
-            <dd>{parentEntity.password}</dd>
           </dl>
           <Button tag={Link} to="/entity/parent" replace color="info">
             <FontAwesomeIcon icon="arrow-left" />{' '}

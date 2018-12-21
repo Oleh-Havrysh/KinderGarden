@@ -33,8 +33,8 @@ export class TeacherDeleteDialog extends React.Component<ITeacherDeleteDialogPro
         <ModalHeader toggle={this.handleClose}>
           <Translate contentKey="entity.delete.title">Confirm delete operation</Translate>
         </ModalHeader>
-        <ModalBody id="myApp2App.teacher.delete.question">
-          <Translate contentKey="myApp2App.teacher.delete.question" interpolate={{ id: teacherEntity.id }}>
+        <ModalBody id="myApp.teacher.delete.question">
+          <Translate contentKey="myApp.teacher.delete.question" interpolate={{ id: teacherEntity.id }}>
             Are you sure you want to delete this Teacher?
           </Translate>
         </ModalBody>

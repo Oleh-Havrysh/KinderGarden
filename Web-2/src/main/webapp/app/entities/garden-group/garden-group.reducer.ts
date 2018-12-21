@@ -69,13 +69,11 @@ export default (state: GardenGroupState = initialState, action): GardenGroupStat
         errorMessage: action.payload
       };
     case SUCCESS(ACTION_TYPES.FETCH_GARDENGROUP_LIST):
-      const links = parseHeaderForLinks(action.payload.headers.link);
       return {
         ...state,
-        links,
         loading: false,
         totalItems: action.payload.headers['x-total-count'],
-        entities: loadMoreDataWhenScrolled(state.entities, action.payload.data, links)
+        entities: action.payload.data
       };
     case SUCCESS(ACTION_TYPES.FETCH_GARDENGROUP):
       return {

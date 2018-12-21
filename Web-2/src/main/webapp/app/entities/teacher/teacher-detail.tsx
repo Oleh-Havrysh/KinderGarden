@@ -25,51 +25,45 @@ export class TeacherDetail extends React.Component<ITeacherDetailProps> {
       <Row>
         <Col md="8">
           <h2>
-            <Translate contentKey="myApp2App.teacher.detail.title">Teacher</Translate> [<b>{teacherEntity.id}</b>]
+            <Translate contentKey="myApp.teacher.detail.title">Teacher</Translate> [<b>{teacherEntity.id}</b>]
           </h2>
           <dl className="jh-entity-details">
             <dt>
               <span id="name">
-                <Translate contentKey="myApp2App.teacher.name">Name</Translate>
+                <Translate contentKey="myApp.teacher.name">Name</Translate>
               </span>
             </dt>
             <dd>{teacherEntity.name}</dd>
             <dt>
               <span id="surname">
-                <Translate contentKey="myApp2App.teacher.surname">Surname</Translate>
+                <Translate contentKey="myApp.teacher.surname">Surname</Translate>
               </span>
             </dt>
             <dd>{teacherEntity.surname}</dd>
             <dt>
               <span id="address">
-                <Translate contentKey="myApp2App.teacher.address">Address</Translate>
+                <Translate contentKey="myApp.teacher.address">Address</Translate>
               </span>
             </dt>
             <dd>{teacherEntity.address}</dd>
             <dt>
               <span id="phone">
-                <Translate contentKey="myApp2App.teacher.phone">Phone</Translate>
+                <Translate contentKey="myApp.teacher.phone">Phone</Translate>
               </span>
             </dt>
             <dd>{teacherEntity.phone}</dd>
             <dt>
               <span id="email">
-                <Translate contentKey="myApp2App.teacher.email">Email</Translate>
+                <Translate contentKey="myApp.teacher.email">Email</Translate>
               </span>
             </dt>
             <dd>{teacherEntity.email}</dd>
             <dt>
               <span id="login">
-                <Translate contentKey="myApp2App.teacher.login">Login</Translate>
+                <Translate contentKey="myApp.teacher.login">Login</Translate>
               </span>
             </dt>
             <dd>{teacherEntity.login}</dd>
-            <dt>
-              <span id="password">
-                <Translate contentKey="myApp2App.teacher.password">Password</Translate>
-              </span>
-            </dt>
-            <dd>{teacherEntity.password}</dd>
           </dl>
           <Button tag={Link} to="/entity/teacher" replace color="info">
             <FontAwesomeIcon icon="arrow-left" />{' '}
