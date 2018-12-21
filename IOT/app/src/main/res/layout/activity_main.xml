@@ -1,72 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
+    xmlns:tools="http://schemas.android.com/tools"
+    
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="ua.nure.havrysh.iot.MainActivity"
-    android:orientation="vertical">
-
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="ua.nure.havrysh.iot.MainActivity">
+    
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
+        
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:padding="@dimen/activity_horizontal_margin">
-
+            
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal">
-
+                android:clipChildren="false"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:paddingBottom="16dp">
+                
                 <com.github.lzyzsd.circleprogress.ArcProgress
-                    android:layout_width="70dp"
                     android:id="@+id/progressX"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_margin="6dp"
                     app:arc_bottom_text="X"
-                    app:arc_bottom_text_size="20sp"
-                    android:layout_margin="6dp"
-                    android:layout_height="70dp" />
+                    app:arc_bottom_text_size="20sp"/>
+                
                 <com.github.lzyzsd.circleprogress.ArcProgress
-                    android:layout_width="70dp"
                     android:id="@+id/progressY"
-                    app:arc_bottom_text="Y"
-                    app:arc_bottom_text_size="20sp"
-                    android:layout_margin="6dp"
-                    android:layout_height="70dp" />
-                <com.github.lzyzsd.circleprogress.ArcProgress
                     android:layout_width="70dp"
-                    android:id="@+id/progressZ"
-                    app:arc_bottom_text="Z"
-                    app:arc_bottom_text_size="20sp"
+                    android:layout_height="70dp"
                     android:layout_margin="6dp"
-                    android:layout_height="70dp" />
-
+                    app:arc_bottom_text="Y"
+                    app:arc_bottom_text_size="20sp"/>
+                
+                <com.github.lzyzsd.circleprogress.ArcProgress
+                    android:id="@+id/progressZ"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_margin="6dp"
+                    app:arc_bottom_text="Z"
+                    app:arc_bottom_text_size="20sp"/>
+            
             </LinearLayout>
-
+            
             <ProgressBar
+                android:id="@+id/progressBarOverall"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/progressBarOverall"
-                android:max="100" />
-
+                android:max="100"/>
+            
             <TextView
-                android:text="TextView"
+                android:id="@+id/text_summary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/text_summary"
-                tools:text="Average movement activity"
-                android:textSize="24sp" />
+                android:text="TextView"
+                android:textSize="24sp"
+                tools:text="Average movement activity"/>
         </LinearLayout>
     </android.support.v7.widget.CardView>
 
