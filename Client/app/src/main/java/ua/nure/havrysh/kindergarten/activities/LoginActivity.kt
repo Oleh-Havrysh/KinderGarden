@@ -17,7 +17,6 @@ import ua.nure.havrysh.kindergarten.App
 import ua.nure.havrysh.kindergarten.model.LoginRequest
 import ua.nure.havrysh.kindergarten.rest.AccessTokenStorage
 import ua.nure.havrysh.kindergarten.rest.Rest
-import ua.nure.havrysh.kindergarten.ui.toast
 
 class LoginActivity : AppCompatActivity() {
     
@@ -44,19 +43,22 @@ class LoginActivity : AppCompatActivity() {
                         loginProgressBar.visibility = GONE
                     }
                 }
-            
-            loginResult.accessToken.takeIf { it.isNotEmpty() }
-                ?.also { onSuccessLogin(it) } ?: onLoginFailure()
+    
+            val self = Rest.get().getSelf().await()
+    
+            AccessTokenStorage(this@LoginActivity).apply {
+                setToken(loginResult.accessToken)
+                setRole(self.role)
+            }
+    
+            AccessTokenStorage(this@LoginActivity).loadRole()
+    
+            onSuccessLogin(loginResult.accessToken)
         }
     }
     
     private fun onSuccessLogin(accessToken: String) {
-        AccessTokenStorage(this).setToken(accessToken)
         startActivity(Intent(this, MainActivity::class.java))
-    }
-    
-    private fun onLoginFailure() {
-        toast("Access token is empty")
     }
 }
 

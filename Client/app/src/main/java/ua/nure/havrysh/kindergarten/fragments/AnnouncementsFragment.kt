@@ -1,5 +1,6 @@
 package ua.nure.havrysh.kindergarten.fragments
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -9,7 +10,8 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import kindergarten.hakito.kindergartenclient.R
 import kotlinx.android.synthetic.main.fragment_announcements.fab_add
-import kotlinx.android.synthetic.main.fragment_children.list_view
+import kotlinx.android.synthetic.main.fragment_announcements.list_view
+
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -17,6 +19,7 @@ import ua.nure.havrysh.kindergarten.App
 import ua.nure.havrysh.kindergarten.activities.AnnouncementActivity
 import ua.nure.havrysh.kindergarten.adapters.AnnouncementsAdapter
 import ua.nure.havrysh.kindergarten.model.Announcement
+import ua.nure.havrysh.kindergarten.rest.AccessTokenStorage
 import ua.nure.havrysh.kindergarten.rest.Rest
 
 class AnnouncementsFragment : Fragment() {
@@ -33,8 +36,13 @@ class AnnouncementsFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_announcements, container, false)
     }
     
+    @SuppressLint("RestrictedApi")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        if (AccessTokenStorage.role == AccessTokenStorage.Role.PARENT) {
+            fab_add.visibility = View.GONE
+        }
+        
         loadAnnouncements()
         
         fab_add.setOnClickListener { v ->

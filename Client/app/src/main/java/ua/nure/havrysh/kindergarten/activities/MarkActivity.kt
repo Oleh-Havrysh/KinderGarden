@@ -6,11 +6,13 @@ import android.databinding.DataBindingUtil
 import android.os.Bundle
 import kindergarten.hakito.kindergartenclient.R
 import kindergarten.hakito.kindergartenclient.databinding.ActivityMarkBinding
+import kotlinx.android.synthetic.main.activity_mark.text_comment
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import ua.nure.havrysh.kindergarten.App
 import ua.nure.havrysh.kindergarten.model.Mark
+import ua.nure.havrysh.kindergarten.rest.AccessTokenStorage
 import ua.nure.havrysh.kindergarten.rest.Rest
 import java.sql.Date
 
@@ -31,6 +33,14 @@ class MarkActivity : BaseEditingActivity() {
             
             binding.mark = mark
         }
+    
+        if (!isEditableActivity) {
+            text_comment.isEnabled = false
+        }
+    }
+    
+    override fun isEditableActivity(): Boolean {
+        return AccessTokenStorage.role != AccessTokenStorage.Role.PARENT
     }
     
     private fun loadMark(markId: String) {

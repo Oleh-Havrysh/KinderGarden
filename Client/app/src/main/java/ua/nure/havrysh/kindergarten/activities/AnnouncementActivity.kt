@@ -8,11 +8,14 @@ import android.view.View
 import android.widget.DatePicker
 import kindergarten.hakito.kindergartenclient.R
 import kindergarten.hakito.kindergartenclient.databinding.ActivityAnnouncementBinding
+import kotlinx.android.synthetic.main.activity_announcement.textView7
+import kotlinx.android.synthetic.main.activity_announcement.text_title
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import ua.nure.havrysh.kindergarten.App
 import ua.nure.havrysh.kindergarten.model.Announcement
+import ua.nure.havrysh.kindergarten.rest.AccessTokenStorage
 import ua.nure.havrysh.kindergarten.rest.Rest
 import java.sql.Date
 import java.util.Calendar
@@ -52,6 +55,15 @@ class AnnouncementActivity : BaseEditingActivity() {
             
             dialog.show()
         }
+    
+        if (!isEditableActivity) {
+            text_title.isEnabled = false
+            textView7.isEnabled = false
+        }
+    }
+    
+    override fun isEditableActivity(): Boolean {
+        return AccessTokenStorage.role != AccessTokenStorage.Role.PARENT
     }
     
     override fun onSave() {

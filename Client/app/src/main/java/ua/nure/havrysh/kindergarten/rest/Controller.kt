@@ -31,8 +31,11 @@ interface Controller {
     @GET("groups/{id}")
     fun getGroup(@Path("id") id: String): Deferred<Group>
     
-    @GET("/childrenByGroup/{id}")
+    @GET("childrenByGroup/{id}")
     fun getChildren(@Path("id") groupId: String): Deferred<List<Child>>
+    
+    @GET("myChildren")
+    fun getMyChildren(): Deferred<List<Child>>
     
     @GET("children/{id}")
     fun getChild(@Path("id") id: String): Deferred<Child>

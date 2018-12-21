@@ -1,6 +1,6 @@
 {
-  "name": "myApp2",
-  "short_name": "myApp2",
+  "name": "KinderGarten",
+  "short_name": "KinderGarten",
   "theme_color": "#000000",
   "background_color": "#e0e0e0",
   "start_url": "/index.html",

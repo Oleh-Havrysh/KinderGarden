@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu
     xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <item android:title="Announcements"
+    
+    <item
         android:id="@+id/menu_announcements"
-        android:checkable="false"
-        android:checked="false" />
-    <item android:title="Groups"
+        android:checkable="true"
+        android:checked="false"
+        android:title="Announcements"/>
+    <item
         android:id="@+id/menu_groups"
-        android:checkable="false"
-        android:checked="false" />
-    <item android:title="Log out"
+        android:checkable="true"
+        android:checked="false"
+        android:title="Groups"/>
+    <item
+        android:id="@+id/menu_my_children"
+        android:checkable="true"
+        android:checked="false"
+        android:title="My children"/>
+    <item
         android:id="@+id/menu_logout"
         android:checkable="false"
-        android:checked="false" />
+        android:checked="false"
+        android:title="Log out"/>
 </menu>

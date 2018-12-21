@@ -28,6 +28,8 @@ class App : Application() {
                         }
                     }
         }
+    
+        AccessTokenStorage(this).loadRole()
     }
     
     companion object {
