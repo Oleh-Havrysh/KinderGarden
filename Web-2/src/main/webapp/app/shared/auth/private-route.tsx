@@ -20,7 +20,7 @@ export const PrivateRouteComponent = ({
   ...rest
 }: IPrivateRouteProps) => {
   const checkAuthorities = props =>
-    isAuthorized ? (
+    isAuthenticated ? ( // isAuthorized ? (
       <ErrorBoundary>
         <Component {...props} />
       </ErrorBoundary>
@@ -60,7 +60,7 @@ export const hasAnyAuthority = (authorities: string[], hasAnyAuthorities: string
     if (hasAnyAuthorities.length === 0) {
       return true;
     }
-    return hasAnyAuthorities.some(auth => authorities.includes(auth));
+    return hasAnyAuthorities.some(auth => authorities && authorities.includes(auth));
   }
   return false;
 };

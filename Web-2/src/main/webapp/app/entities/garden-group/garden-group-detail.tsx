@@ -25,19 +25,19 @@ export class GardenGroupDetail extends React.Component<IGardenGroupDetailProps> 
       <Row>
         <Col md="8">
           <h2>
-            <Translate contentKey="myApp2App.gardenGroup.detail.title">GardenGroup</Translate> [<b>{gardenGroupEntity.id}</b>]
+            <Translate contentKey="myApp.gardenGroup.detail.title">GardenGroup</Translate> [<b>{gardenGroupEntity.id}</b>]
           </h2>
           <dl className="jh-entity-details">
             <dt>
               <span id="name">
-                <Translate contentKey="myApp2App.gardenGroup.name">Name</Translate>
+                <Translate contentKey="myApp.gardenGroup.name">Name</Translate>
               </span>
             </dt>
             <dd>{gardenGroupEntity.name}</dd>
             <dt>
-              <Translate contentKey="myApp2App.gardenGroup.teacher">Teacher</Translate>
+              <Translate contentKey="myApp.gardenGroup.teacher">Teacher</Translate>
             </dt>
-            <dd>{gardenGroupEntity.teacher ? gardenGroupEntity.teacher.id : ''}</dd>
+            <dd>{gardenGroupEntity.teacher ? gardenGroupEntity.teacher.name : ''}</dd>
           </dl>
           <Button tag={Link} to="/entity/garden-group" replace color="info">
             <FontAwesomeIcon icon="arrow-left" />{' '}

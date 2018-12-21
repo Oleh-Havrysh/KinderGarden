@@ -63,22 +63,40 @@
 
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
                         </TableRow>
-
+    
                         <TableRow
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
-
+        
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Surname"/>
+        
+                            <EditText
+                                android:id="@+id/text_surname"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@={child.surname}"
+            
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
+                        </TableRow>
+    
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+        
                             <TextView
                                 android:id="@+id/textView4"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Birth date " />
-
+        
                             <TextView
                                 android:id="@+id/text_birthdate"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-
+            
                                 android:text="@{child.birth_date.toString()}"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
                         </TableRow>

@@ -70,8 +70,8 @@ export class ParentUpdate extends React.Component<IParentUpdateProps, IParentUpd
       <div>
         <Row className="justify-content-center">
           <Col md="8">
-            <h2 id="myApp2App.parent.home.createOrEditLabel">
-              <Translate contentKey="myApp2App.parent.home.createOrEditLabel">Create or edit a Parent</Translate>
+            <h2 id="myApp.parent.home.createOrEditLabel">
+              <Translate contentKey="myApp.parent.home.createOrEditLabel">Create or edit a Parent</Translate>
             </h2>
           </Col>
         </Row>
@@ -91,43 +91,43 @@ export class ParentUpdate extends React.Component<IParentUpdateProps, IParentUpd
                 ) : null}
                 <AvGroup>
                   <Label id="nameLabel" for="name">
-                    <Translate contentKey="myApp2App.parent.name">Name</Translate>
+                    <Translate contentKey="myApp.parent.name">Name</Translate>
                   </Label>
                   <AvField id="parent-name" type="text" name="name" />
                 </AvGroup>
                 <AvGroup>
                   <Label id="surnameLabel" for="surname">
-                    <Translate contentKey="myApp2App.parent.surname">Surname</Translate>
+                    <Translate contentKey="myApp.parent.surname">Surname</Translate>
                   </Label>
                   <AvField id="parent-surname" type="text" name="surname" />
                 </AvGroup>
                 <AvGroup>
                   <Label id="addressLabel" for="address">
-                    <Translate contentKey="myApp2App.parent.address">Address</Translate>
+                    <Translate contentKey="myApp.parent.address">Address</Translate>
                   </Label>
                   <AvField id="parent-address" type="text" name="address" />
                 </AvGroup>
                 <AvGroup>
                   <Label id="phoneLabel" for="phone">
-                    <Translate contentKey="myApp2App.parent.phone">Phone</Translate>
+                    <Translate contentKey="myApp.parent.phone">Phone</Translate>
                   </Label>
                   <AvField id="parent-phone" type="text" name="phone" />
                 </AvGroup>
                 <AvGroup>
                   <Label id="emailLabel" for="email">
-                    <Translate contentKey="myApp2App.parent.email">Email</Translate>
+                    <Translate contentKey="myApp.parent.email">Email</Translate>
                   </Label>
                   <AvField id="parent-email" type="text" name="email" />
                 </AvGroup>
                 <AvGroup>
                   <Label id="loginLabel" for="login">
-                    <Translate contentKey="myApp2App.parent.login">Login</Translate>
+                    <Translate contentKey="myApp.parent.login">Login</Translate>
                   </Label>
                   <AvField id="parent-login" type="text" name="login" />
                 </AvGroup>
                 <AvGroup>
                   <Label id="passwordLabel" for="password">
-                    <Translate contentKey="myApp2App.parent.password">Password</Translate>
+                    <Translate contentKey="myApp.parent.password">Password</Translate>
                   </Label>
                   <AvField id="parent-password" type="text" name="password" />
                 </AvGroup>

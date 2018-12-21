@@ -53,11 +53,11 @@ export class Teacher extends React.Component<ITeacherProps, ITeacherState> {
     return (
       <div>
         <h2 id="teacher-heading">
-          <Translate contentKey="myApp2App.teacher.home.title">Teachers</Translate>
+          <Translate contentKey="myApp.teacher.home.title">Teachers</Translate>
           <Link to={`${match.url}/new`} className="btn btn-primary float-right jh-create-entity" id="jh-create-entity">
             <FontAwesomeIcon icon="plus" />
             &nbsp;
-            <Translate contentKey="myApp2App.teacher.home.createLabel">Create new Teacher</Translate>
+            <Translate contentKey="myApp.teacher.home.createLabel">Create new Teacher</Translate>
           </Link>
         </h2>
         <div className="table-responsive">
@@ -68,25 +68,22 @@ export class Teacher extends React.Component<ITeacherProps, ITeacherState> {
                   <Translate contentKey="global.field.id">ID</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th className="hand" onClick={this.sort('name')}>
-                  <Translate contentKey="myApp2App.teacher.name">Name</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="myApp.teacher.name">Name</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th className="hand" onClick={this.sort('surname')}>
-                  <Translate contentKey="myApp2App.teacher.surname">Surname</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="myApp.teacher.surname">Surname</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th className="hand" onClick={this.sort('address')}>
-                  <Translate contentKey="myApp2App.teacher.address">Address</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="myApp.teacher.address">Address</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th className="hand" onClick={this.sort('phone')}>
-                  <Translate contentKey="myApp2App.teacher.phone">Phone</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="myApp.teacher.phone">Phone</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th className="hand" onClick={this.sort('email')}>
-                  <Translate contentKey="myApp2App.teacher.email">Email</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="myApp.teacher.email">Email</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th className="hand" onClick={this.sort('login')}>
-                  <Translate contentKey="myApp2App.teacher.login">Login</Translate> <FontAwesomeIcon icon="sort" />
-                </th>
-                <th className="hand" onClick={this.sort('password')}>
-                  <Translate contentKey="myApp2App.teacher.password">Password</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="myApp.teacher.login">Login</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th />
               </tr>
@@ -96,7 +93,7 @@ export class Teacher extends React.Component<ITeacherProps, ITeacherState> {
                 <tr key={`entity-${i}`}>
                   <td>
                     <Button tag={Link} to={`${match.url}/${teacher.id}`} color="link" size="sm">
-                      {teacher.id}
+                      {teacher.name}
                     </Button>
                   </td>
                   <td>{teacher.name}</td>
@@ -105,7 +102,6 @@ export class Teacher extends React.Component<ITeacherProps, ITeacherState> {
                   <td>{teacher.phone}</td>
                   <td>{teacher.email}</td>
                   <td>{teacher.login}</td>
-                  <td>{teacher.password}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${teacher.id}`} color="info" size="sm">

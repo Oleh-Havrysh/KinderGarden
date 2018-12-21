@@ -51,7 +51,7 @@ export default (state: PasswordState = initialState, action): PasswordState => {
 };
 
 // Actions
-const apiUrl = 'api/account';
+const apiUrl = 'login';
 
 export const savePassword = (currentPassword, newPassword) => ({
   type: ACTION_TYPES.UPDATE_PASSWORD,
