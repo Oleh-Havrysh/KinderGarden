@@ -67,33 +67,7 @@ public class GardenGroupResource {
     }
 
     /**
-     * GET  /groups : get all the gardenGroups.
-     *
-     * @param pageable the pagination information
-     * @return the ResponseEntity with status 200 (OK) and the list of gardenGroups in body
-     */
-    @GetMapping
-    public ResponseEntity<List<Group>> getAllGardenGroups(Pageable pageable) {
-        log.debug("REST request to get a page of GardenGroups");
-        Page<Group> page = gardenGroupService.findAll(pageable);
-        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/groups");
-        return ResponseEntity.ok().headers(headers).body(page.getContent());
-    }
-
-    /**
-     * GET  /garden-groups/:id : get the "id" gardenGroup.
-     *
-     * @param id the id of the gardenGroup to retrieve
-     * @return the ResponseEntity with status 200 (OK) and with body the gardenGroup, or with status 404 (Not Found)
-     */
-    @GetMapping("/{id}")
-    public ResponseEntity<Group> getGardenGroup(@PathVariable String id) {
-        log.debug("REST request to get GardenGroup : {}", id);
-        return ResponseEntity.ok(gardenGroupService.findById(id));
-    }
-
-    /**
-     * DELETE  /garden-groups/:id : delete the "id" gardenGroup.
+     * DELETE  /groups/:id : delete the "id" gardenGroup.
      *
      * @param id the id of the gardenGroup to delete
      * @return the ResponseEntity with status 200 (OK)

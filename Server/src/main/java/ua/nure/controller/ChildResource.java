@@ -82,18 +82,6 @@ public class ChildResource {
     }
 
     /**
-     * GET  /children/:id : get the "id" child.
-     *
-     * @param id the id of the child to retrieve
-     * @return the ResponseEntity with status 200 (OK) and with body the child, or with status 404 (Not Found)
-     */
-    @GetMapping("/{id}")
-    public ResponseEntity<Child> getChild(@PathVariable String id) {
-        log.debug("REST request to get Child : {}", id);
-        return ResponseEntity.ok(childService.findById(id));
-    }
-
-    /**
      * DELETE  /children/:id : delete the "id" child.
      *
      * @param id the id of the child to delete
