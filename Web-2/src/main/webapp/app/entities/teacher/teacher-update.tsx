@@ -70,8 +70,8 @@ export class TeacherUpdate extends React.Component<ITeacherUpdateProps, ITeacher
       <div>
         <Row className="justify-content-center">
           <Col md="8">
-            <h2 id="myApp2App.teacher.home.createOrEditLabel">
-              <Translate contentKey="myApp2App.teacher.home.createOrEditLabel">Create or edit a Teacher</Translate>
+            <h2 id="myApp.teacher.home.createOrEditLabel">
+              <Translate contentKey="myApp.teacher.home.createOrEditLabel">Create or edit a Teacher</Translate>
             </h2>
           </Col>
         </Row>
@@ -91,43 +91,43 @@ export class TeacherUpdate extends React.Component<ITeacherUpdateProps, ITeacher
                 ) : null}
                 <AvGroup>
                   <Label id="nameLabel" for="name">
-                    <Translate contentKey="myApp2App.teacher.name">Name</Translate>
+                    <Translate contentKey="myApp.teacher.name">Name</Translate>
                   </Label>
                   <AvField id="teacher-name" type="text" name="name" />
                 </AvGroup>
                 <AvGroup>
                   <Label id="surnameLabel" for="surname">
-                    <Translate contentKey="myApp2App.teacher.surname">Surname</Translate>
+                    <Translate contentKey="myApp.teacher.surname">Surname</Translate>
                   </Label>
                   <AvField id="teacher-surname" type="text" name="surname" />
                 </AvGroup>
                 <AvGroup>
                   <Label id="addressLabel" for="address">
-                    <Translate contentKey="myApp2App.teacher.address">Address</Translate>
+                    <Translate contentKey="myApp.teacher.address">Address</Translate>
                   </Label>
                   <AvField id="teacher-address" type="text" name="address" />
                 </AvGroup>
                 <AvGroup>
                   <Label id="phoneLabel" for="phone">
-                    <Translate contentKey="myApp2App.teacher.phone">Phone</Translate>
+                    <Translate contentKey="myApp.teacher.phone">Phone</Translate>
                   </Label>
                   <AvField id="teacher-phone" type="text" name="phone" />
                 </AvGroup>
                 <AvGroup>
                   <Label id="emailLabel" for="email">
-                    <Translate contentKey="myApp2App.teacher.email">Email</Translate>
+                    <Translate contentKey="myApp.teacher.email">Email</Translate>
                   </Label>
                   <AvField id="teacher-email" type="text" name="email" />
                 </AvGroup>
                 <AvGroup>
                   <Label id="loginLabel" for="login">
-                    <Translate contentKey="myApp2App.teacher.login">Login</Translate>
+                    <Translate contentKey="myApp.teacher.login">Login</Translate>
                   </Label>
                   <AvField id="teacher-login" type="text" name="login" />
                 </AvGroup>
                 <AvGroup>
                   <Label id="passwordLabel" for="password">
-                    <Translate contentKey="myApp2App.teacher.password">Password</Translate>
+                    <Translate contentKey="myApp.teacher.password">Password</Translate>
                   </Label>
                   <AvField id="teacher-password" type="text" name="password" />
                 </AvGroup>

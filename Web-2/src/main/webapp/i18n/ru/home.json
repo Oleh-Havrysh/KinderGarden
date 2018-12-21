@@ -3,7 +3,7 @@
     "title": "Добро пожаловать в KinderGarten!",
     "subtitle": "Это ваша домашняя страница",
     "logged": {
-      "message": "Вы вошли как пользователь \"{{username}}\"."
+      "message": "Вы вошли как пользователь \"{{email}}\"."
     },
     "question": "Если у Вас возникли вопросы по JHipster:",
     "link": {

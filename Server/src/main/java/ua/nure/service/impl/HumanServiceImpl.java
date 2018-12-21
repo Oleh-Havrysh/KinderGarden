@@ -1,6 +1,8 @@
 package ua.nure.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,8 +32,23 @@ public class HumanServiceImpl implements HumanService {
     }
 
     @Override
-    public void save(Human human) {
-        humanRepository.save(human);
+    public Human save(Human human) {
+        return humanRepository.save(human);
+    }
+
+    @Override
+    public Page<Human> findAllParents(Pageable pageable) {
+        return humanRepository.findAllByRole(pageable, 0);
+    }
+
+    @Override
+    public Page<Human> findAllTeachers(Pageable pageable) {
+        return humanRepository.findAllByRole(pageable, 1);
+    }
+
+    @Override
+    public void delete(String id) {
+        humanRepository.deleteById(id);
     }
 
     @Override
@@ -42,10 +59,5 @@ public class HumanServiceImpl implements HumanService {
     public void register(Human human) {
         human.setPassword(passwordEncoder.encode(human.getPassword()));
         save(human);
-    }
-
-    @Override
-    public Human findByLogin(String login) {
-        return humanRepository.findByLogin(login);
     }
 }

@@ -25,37 +25,37 @@ export class ChildDetail extends React.Component<IChildDetailProps> {
       <Row>
         <Col md="8">
           <h2>
-            <Translate contentKey="myApp2App.child.detail.title">Child</Translate> [<b>{childEntity.id}</b>]
+            <Translate contentKey="myApp.child.detail.title">Child</Translate> [<b>{childEntity.id}</b>]
           </h2>
           <dl className="jh-entity-details">
             <dt>
               <span id="name">
-                <Translate contentKey="myApp2App.child.name">Name</Translate>
+                <Translate contentKey="myApp.child.name">Name</Translate>
               </span>
             </dt>
             <dd>{childEntity.name}</dd>
             <dt>
               <span id="surname">
-                <Translate contentKey="myApp2App.child.surname">Surname</Translate>
+                <Translate contentKey="myApp.child.surname">Surname</Translate>
               </span>
             </dt>
             <dd>{childEntity.surname}</dd>
             <dt>
               <span id="birthDate">
-                <Translate contentKey="myApp2App.child.birthDate">Birth Date</Translate>
+                <Translate contentKey="myApp.child.birthDate">Birth Date</Translate>
               </span>
             </dt>
             <dd>
               <TextFormat value={childEntity.birthDate} type="date" format={APP_LOCAL_DATE_FORMAT} />
             </dd>
             <dt>
-              <Translate contentKey="myApp2App.child.parent">Parent</Translate>
+              <Translate contentKey="myApp.child.parent">Parent</Translate>
             </dt>
-            <dd>{childEntity.parent ? childEntity.parent.id : ''}</dd>
+            <dd>{childEntity.parent ? childEntity.parent.name : ''}</dd>
             <dt>
-              <Translate contentKey="myApp2App.child.group">Group</Translate>
+              <Translate contentKey="myApp.child.group">Group</Translate>
             </dt>
-            <dd>{childEntity.group ? childEntity.group.id : ''}</dd>
+            <dd>{childEntity.group ? childEntity.group.name : ''}</dd>
           </dl>
           <Button tag={Link} to="/entity/child" replace color="info">
             <FontAwesomeIcon icon="arrow-left" />{' '}

@@ -74,8 +74,8 @@ export class GardenGroupUpdate extends React.Component<IGardenGroupUpdateProps, 
       <div>
         <Row className="justify-content-center">
           <Col md="8">
-            <h2 id="myApp2App.gardenGroup.home.createOrEditLabel">
-              <Translate contentKey="myApp2App.gardenGroup.home.createOrEditLabel">Create or edit a GardenGroup</Translate>
+            <h2 id="myApp.gardenGroup.home.createOrEditLabel">
+              <Translate contentKey="myApp.gardenGroup.home.createOrEditLabel">Create or edit a GardenGroup</Translate>
             </h2>
           </Col>
         </Row>
@@ -95,13 +95,13 @@ export class GardenGroupUpdate extends React.Component<IGardenGroupUpdateProps, 
                 ) : null}
                 <AvGroup>
                   <Label id="nameLabel" for="name">
-                    <Translate contentKey="myApp2App.gardenGroup.name">Name</Translate>
+                    <Translate contentKey="myApp.gardenGroup.name">Name</Translate>
                   </Label>
                   <AvField id="garden-group-name" type="text" name="name" />
                 </AvGroup>
                 <AvGroup>
                   <Label for="teacher.id">
-                    <Translate contentKey="myApp2App.gardenGroup.teacher">Teacher</Translate>
+                    <Translate contentKey="myApp.gardenGroup.teacher">Teacher</Translate>
                   </Label>
                   <AvInput id="garden-group-teacher" type="select" className="form-control" name="teacher.id">
                     <option value="" key="0" />

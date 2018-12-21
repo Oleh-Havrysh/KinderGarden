@@ -33,8 +33,8 @@ export class ParentDeleteDialog extends React.Component<IParentDeleteDialogProps
         <ModalHeader toggle={this.handleClose}>
           <Translate contentKey="entity.delete.title">Confirm delete operation</Translate>
         </ModalHeader>
-        <ModalBody id="myApp2App.parent.delete.question">
-          <Translate contentKey="myApp2App.parent.delete.question" interpolate={{ id: parentEntity.id }}>
+        <ModalBody id="myApp.parent.delete.question">
+          <Translate contentKey="myApp.parent.delete.question" interpolate={{ id: parentEntity.id }}>
             Are you sure you want to delete this Parent?
           </Translate>
         </ModalBody>

@@ -23,8 +23,8 @@ export class Login extends React.Component<ILoginProps, ILoginState> {
     }
   }
 
-  handleLogin = (username, password, rememberMe = false) => {
-    this.props.login(username, password, rememberMe);
+  handleLogin = (email, password, rememberMe = false) => {
+    this.props.login(email, password, rememberMe);
   };
 
   handleClose = () => {

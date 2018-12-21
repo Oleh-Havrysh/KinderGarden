@@ -1,6 +1,8 @@
 package ua.nure.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ua.nure.model.Child;
@@ -11,6 +13,7 @@ import ua.nure.service.ChildService;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -41,8 +44,36 @@ public class ChildServiceImpl implements ChildService {
         return childRepository.findById(id).orElse(null);
     }
 
+    /**
+     * Save a child.
+     *
+     * @param child the entity to save
+     * @return the persisted entity
+     */
     @Override
-    public void save(Child child) {
-        childRepository.save(child);
+    public Child save(Child child) {
+        return childRepository.save(child);
+    }
+
+    /**
+     * Get all the children.
+     *
+     * @param pageable the pagination information
+     * @return the list of entities
+     */
+    @Override
+    @Transactional(readOnly = true)
+    public Page<Child> findAll(Pageable pageable) {
+        return childRepository.findAll(pageable);
+    }
+
+    /**
+     * Delete the child by id.
+     *
+     * @param id the id of the entity
+     */
+    @Override
+    public void delete(String id) {
+        childRepository.deleteById(id);
     }
 }

@@ -21,8 +21,8 @@ export default (state: ApplicationProfileState = initialState, action): Applicat
       return {
         ...state,
         ribbonEnv: data['display-ribbon-on-profiles'],
-        inProduction: data.activeProfiles.includes('prod'),
-        isSwaggerEnabled: data.activeProfiles.includes('swagger')
+        inProduction: true, // data.activeProfiles.includes('prod'),
+        isSwaggerEnabled: true // data.activeProfiles.includes('swagger')
       };
     default:
       return state;

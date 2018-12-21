@@ -33,8 +33,8 @@ export class GardenGroupDeleteDialog extends React.Component<IGardenGroupDeleteD
         <ModalHeader toggle={this.handleClose}>
           <Translate contentKey="entity.delete.title">Confirm delete operation</Translate>
         </ModalHeader>
-        <ModalBody id="myApp2App.gardenGroup.delete.question">
-          <Translate contentKey="myApp2App.gardenGroup.delete.question" interpolate={{ id: gardenGroupEntity.id }}>
+        <ModalBody id="myApp.gardenGroup.delete.question">
+          <Translate contentKey="myApp.gardenGroup.delete.question" interpolate={{ id: gardenGroupEntity.id }}>
             Are you sure you want to delete this GardenGroup?
           </Translate>
         </ModalBody>
