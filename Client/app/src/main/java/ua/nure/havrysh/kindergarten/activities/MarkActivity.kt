@@ -6,6 +6,7 @@ import android.databinding.DataBindingUtil
 import android.os.Bundle
 import kindergarten.hakito.kindergartenclient.R
 import kindergarten.hakito.kindergartenclient.databinding.ActivityMarkBinding
+import kotlinx.android.synthetic.main.activity_mark.text_comment
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -31,6 +32,10 @@ class MarkActivity : BaseEditingActivity() {
             val mark = Mark(date = Date(date))
             
             binding.mark = mark
+        }
+    
+        if (!isEditableActivity) {
+            text_comment.isEnabled = false
         }
     }
     

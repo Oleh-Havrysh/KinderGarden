@@ -117,6 +117,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="Comments"
             android:inputType="textPersonName"
             android:lines="5"
             android:text="@={mark.comment}"/>
