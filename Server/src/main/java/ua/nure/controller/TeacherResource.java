@@ -34,7 +34,7 @@ public class TeacherResource {
     }
 
     /**
-     * POST  /humans : Create a new human.
+     * POST  /teachers : Create a new human.
      *
      * @param human the human to create
      * @return the ResponseEntity with status 201 (Created) and with body the new human, or with status 400 (Bad Request) if the human has already an ID
@@ -42,21 +42,22 @@ public class TeacherResource {
      */
     @PostMapping
     public ResponseEntity<Human> createHuman(@RequestBody Human human) throws URISyntaxException {
+        human.setRole(1);
         log.debug("REST request to save Human : {}", human);
+
         Human result = humanService.save(human);
-        return ResponseEntity.created(new URI("/api/humans/" + result.getId()))
+        return ResponseEntity.created(new URI("/teachers/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId()))
             .body(result);
     }
 
     /**
-     * PUT  /humans : Updates an existing human.
+     * PUT  /teachers : Updates an existing human.
      *
      * @param human the human to update
      * @return the ResponseEntity with status 200 (OK) and with body the updated human,
      * or with status 400 (Bad Request) if the human is not valid,
      * or with status 500 (Internal Server Error) if the human couldn't be updated
-     * @throws URISyntaxException if the Location URI syntax is incorrect
      */
     @PutMapping
     public ResponseEntity<Human> updateHuman(@RequestBody Human human) {
@@ -68,7 +69,7 @@ public class TeacherResource {
     }
 
     /**
-     * GET  /humans : get all the humans.
+     * GET  /teachers : get all the humans.
      *
      * @param pageable the pagination information
      * @return the ResponseEntity with status 200 (OK) and the list of humans in body
@@ -82,7 +83,7 @@ public class TeacherResource {
     }
 
     /**
-     * GET  /humans/:id : get the "id" human.
+     * GET  /teachers/:id : get the "id" human.
      *
      * @param id the id of the human to retrieve
      * @return the ResponseEntity with status 200 (OK) and with body the human, or with status 404 (Not Found)
@@ -94,7 +95,7 @@ public class TeacherResource {
     }
 
     /**
-     * DELETE  /humans/:id : delete the "id" human.
+     * DELETE  /teachers/:id : delete the "id" human.
      *
      * @param id the id of the human to delete
      * @return the ResponseEntity with status 200 (OK)

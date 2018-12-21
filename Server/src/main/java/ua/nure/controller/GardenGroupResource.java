@@ -44,7 +44,7 @@ public class GardenGroupResource {
     public ResponseEntity<Group> createGardenGroup(@RequestBody Group gardenGroup) throws URISyntaxException {
         log.debug("REST request to save GardenGroup : {}", gardenGroup);
         Group result = gardenGroupService.save(gardenGroup);
-        return ResponseEntity.created(new URI("/api/garden-groups/" + result.getId()))
+        return ResponseEntity.created(new URI("/groups/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId()))
             .body(result);
     }

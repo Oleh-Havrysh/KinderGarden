@@ -45,7 +45,7 @@ public class ChildResource {
         log.debug("REST request to save Child : {}", child);
         Child result = childService.save(child);
 
-        return ResponseEntity.created(new URI("/api/children/" + result.getId()))
+        return ResponseEntity.created(new URI("/children/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId()))
             .body(result);
     }
