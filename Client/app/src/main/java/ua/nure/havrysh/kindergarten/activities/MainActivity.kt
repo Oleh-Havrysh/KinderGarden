@@ -20,6 +20,7 @@ import kotlinx.coroutines.withContext
 import ua.nure.havrysh.kindergarten.App
 import ua.nure.havrysh.kindergarten.fragments.AnnouncementsFragment
 import ua.nure.havrysh.kindergarten.fragments.GroupsFragment
+import ua.nure.havrysh.kindergarten.fragments.MyChildrenFragment
 import ua.nure.havrysh.kindergarten.rest.AccessTokenStorage
 import ua.nure.havrysh.kindergarten.rest.Rest
 
@@ -53,10 +54,26 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         nav_view.setNavigationItemSelectedListener(this)
         
         loadProfile()
-        
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.content_main, GroupsFragment())
-            .commit()
+    
+        showRoleMenuItems()
+    }
+    
+    private fun showRoleMenuItems() {
+        when (AccessTokenStorage.role) {
+            AccessTokenStorage.Role.TEACHER -> {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.content_main, GroupsFragment())
+                    .commit()
+                nav_view.menu.findItem(R.id.menu_my_children).isVisible = false
+            }
+            
+            AccessTokenStorage.Role.PARENT -> {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.content_main, MyChildrenFragment())
+                    .commit()
+                nav_view.menu.findItem(R.id.menu_groups).isVisible = false
+            }
+        }
     }
     
     private fun loadProfile() {
@@ -111,6 +128,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             transaction.replace(R.id.content_main, AnnouncementsFragment())
         } else if (id == R.id.menu_groups) {
             transaction.replace(R.id.content_main, GroupsFragment())
+        } else if (id == R.id.menu_my_children) {
+            transaction.replace(R.id.content_main, MyChildrenFragment())
         } else if (id == R.id.menu_logout) {
             AccessTokenStorage(this).setToken("")
             val intent = Intent(this, LoginActivity::class.java)

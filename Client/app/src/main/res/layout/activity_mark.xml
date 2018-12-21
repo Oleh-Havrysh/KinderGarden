@@ -1,96 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
-
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    
     <data>
-
+        
         <variable
             name="mark"
             type="ua.nure.havrysh.kindergarten.model.Mark"></variable>
     </data>
-
-    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/activity_mark"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
         tools:context="ua.nure.havrysh.kindergarten.activities.MarkActivity">
-
+        
         <TextView
             android:id="@+id/text_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{mark.prettyDate}" />
-
+            android:text="@{mark.prettyDate}"/>
+        
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+            
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Behaviour  " />
+                android:text="Behaviour  "/>
+            
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{mark.behaviour==0?&quot;(not set)&quot;:null}"
                 />
-
+        
         </TableRow>
-
+        
         <RatingBar
             android:id="@+id/rating_behaviour"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:rating="@={mark.behaviour}" />
-
+            android:rating="@={mark.behaviour}"/>
+        
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+            
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sleeping  " />
+                android:text="Sleeping  "/>
+            
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{mark.sleeping==0?&quot;(not set)&quot;:null}"
                 />
-
+        
         </TableRow>
-
+        
         <RatingBar
             android:id="@+id/rating_sleeping"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:rating="@={mark.sleeping}" />
-
+            android:rating="@={mark.sleeping}"/>
+        
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+            
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Eating  " />
+                android:text="Eating  "/>
+            
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{mark.eating==0?&quot;(not set)&quot;:null}"
                 />
-
+        
         </TableRow>
-
+        
         <RatingBar
             android:id="@+id/rating_eating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:rating="@={mark.eating}" />
-
+            android:rating="@={mark.eating}"/>
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Activity"/>
+        
+        <ProgressBar
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="false"
+            android:max="100"
+            android:progress="@{mark.activity}"/>
+        
         <EditText
             android:id="@+id/text_comment"
             android:layout_width="match_parent"
@@ -98,7 +119,7 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:lines="5"
-            android:text="@={mark.comment}" />
-
+            android:text="@={mark.comment}"/>
+    
     </LinearLayout>
 </layout>

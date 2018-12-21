@@ -11,6 +11,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import ua.nure.havrysh.kindergarten.App
 import ua.nure.havrysh.kindergarten.model.Mark
+import ua.nure.havrysh.kindergarten.rest.AccessTokenStorage
 import ua.nure.havrysh.kindergarten.rest.Rest
 import java.sql.Date
 
@@ -31,6 +32,10 @@ class MarkActivity : BaseEditingActivity() {
             
             binding.mark = mark
         }
+    }
+    
+    override fun isEditableActivity(): Boolean {
+        return AccessTokenStorage.role != AccessTokenStorage.Role.PARENT
     }
     
     private fun loadMark(markId: String) {

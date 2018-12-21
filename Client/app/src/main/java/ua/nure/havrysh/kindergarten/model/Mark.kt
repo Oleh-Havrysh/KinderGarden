@@ -10,7 +10,7 @@ data class Mark(
     var behaviour: Long = 0,
     var sleeping: Long = 0,
     var eating: Long = 0,
-    var child_id: Long = 0
+    var activity: Int = 0
 ) {
     
     val prettyDate: String
