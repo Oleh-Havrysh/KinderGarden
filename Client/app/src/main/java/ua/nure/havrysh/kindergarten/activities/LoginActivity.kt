@@ -44,13 +44,12 @@ class LoginActivity : AppCompatActivity() {
                     }
                 }
     
+            val tokenStorage = AccessTokenStorage(this@LoginActivity)
+            tokenStorage.setToken(loginResult.accessToken)
+            
             val self = Rest.get().getSelf().await()
-    
-            AccessTokenStorage(this@LoginActivity).apply {
-                setToken(loginResult.accessToken)
-                setRole(self.role)
-            }
-    
+            tokenStorage.setRole(self.role)
+            
             AccessTokenStorage(this@LoginActivity).loadRole()
     
             onSuccessLogin(loginResult.accessToken)
