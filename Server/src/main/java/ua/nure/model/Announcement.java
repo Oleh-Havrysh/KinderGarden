@@ -3,7 +3,7 @@ package ua.nure.model;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name = "announcements")
@@ -18,14 +18,14 @@ public class Announcement {
     @Column
     private String content;
     @Column(name = "creation_date")
-    private LocalDateTime creationDate;
+    private Timestamp creationDate;
     @Column(name = "expires")
-    private LocalDateTime expires;
+    private Timestamp expires;
 
     public Announcement() {
     }
 
-    public Announcement(String title, String content, LocalDateTime creationDate, LocalDateTime expires) {
+    public Announcement(String title, String content, Timestamp creationDate, Timestamp expires) {
         this.title = title;
         this.content = content;
         this.creationDate = creationDate;
@@ -56,19 +56,19 @@ public class Announcement {
         this.id = id;
     }
 
-    public LocalDateTime getCreationDate() {
+    public Timestamp getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(LocalDateTime creationDate) {
+    public void setCreationDate(Timestamp creationDate) {
         this.creationDate = creationDate;
     }
 
-    public LocalDateTime getExpires() {
+    public Timestamp getExpires() {
         return expires;
     }
 
-    public void setExpires(LocalDateTime expires) {
+    public void setExpires(Timestamp expires) {
         this.expires = expires;
     }
 }
