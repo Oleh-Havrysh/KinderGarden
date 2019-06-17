@@ -9,9 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import kindergarten.hakito.kindergartenclient.R
-import kotlinx.android.synthetic.main.fragment_announcements.fab_add
-import kotlinx.android.synthetic.main.fragment_announcements.list_view
-
+import kotlinx.android.synthetic.main.fragment_announcements.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -42,8 +40,6 @@ class AnnouncementsFragment : Fragment() {
         if (AccessTokenStorage.role == AccessTokenStorage.Role.PARENT) {
             fab_add.visibility = View.GONE
         }
-        
-        loadAnnouncements()
         
         fab_add.setOnClickListener { v ->
             val intent = Intent(v.context, AnnouncementActivity::class.java)
